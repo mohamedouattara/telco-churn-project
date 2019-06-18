@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Dataset{% endblock %}
+
+{% block body %}
+    <h1>Create new Dataset</h1>
+
+    {{ include('dataset/_form.html.twig') }}
+
+    <a href="{{ path('dataset_index') }}">back to list</a>
+{% endblock %}

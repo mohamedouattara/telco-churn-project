@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dataset index{% endblock %}
+
+{% block body %}
+    <h1>Dataset index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Gender</th>
+                <th>Seniorcitizen</th>
+                <th>Partner</th>
+                <th>Dependents</th>
+                <th>Phoneservice</th>
+                <th>Multiplelines</th>
+                <th>Internetservice</th>
+                <th>Onlinesecurity</th>
+                <th>Onlinebackup</th>
+                <th>Deviceprotection</th>
+                <th>Techsupport</th>
+                <th>Streamingtv</th>
+                <th>Streamingmovies</th>
+                <th>Contract</th>
+                <th>Paperlessbilling</th>
+                <th>Paymentmethod</th>
+                <th>Tenure</th>
+                <th>Monthlycharges</th>
+                <th>Totalcharges</th>
+                <th>Churn</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for dataset in datasets %}
+            <tr>
+                <td>{{ dataset.id }}</td>
+                <td>{{ dataset.gender }}</td>
+                <td>{{ dataset.seniorcitizen ? 'Yes' : 'No' }}</td>
+                <td>{{ dataset.partner }}</td>
+                <td>{{ dataset.dependents }}</td>
+                <td>{{ dataset.phoneservice }}</td>
+                <td>{{ dataset.multiplelines }}</td>
+                <td>{{ dataset.internetservice }}</td>
+                <td>{{ dataset.onlinesecurity }}</td>
+                <td>{{ dataset.onlinebackup }}</td>
+                <td>{{ dataset.deviceprotection }}</td>
+                <td>{{ dataset.techsupport }}</td>
+                <td>{{ dataset.streamingtv }}</td>
+                <td>{{ dataset.streamingmovies }}</td>
+                <td>{{ dataset.contract }}</td>
+                <td>{{ dataset.paperlessbilling }}</td>
+                <td>{{ dataset.paymentmethod }}</td>
+                <td>{{ dataset.tenure }}</td>
+                <td>{{ dataset.monthlycharges }}</td>
+                <td>{{ dataset.totalcharges }}</td>
+                <td>{{ dataset.churn }}</td>
+                <td>
+                    <a href="{{ path('dataset_show', {'id': dataset.id}) }}">show</a>
+                    <a href="{{ path('dataset_edit', {'id': dataset.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="22">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('dataset_new') }}">Create new</a>
+{% endblock %}

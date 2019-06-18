@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dataset{% endblock %}
+
+{% block body %}
+    <h1>Dataset</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ dataset.id }}</td>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <td>{{ dataset.gender }}</td>
+            </tr>
+            <tr>
+                <th>Seniorcitizen</th>
+                <td>{{ dataset.seniorcitizen ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Partner</th>
+                <td>{{ dataset.partner }}</td>
+            </tr>
+            <tr>
+                <th>Dependents</th>
+                <td>{{ dataset.dependents }}</td>
+            </tr>
+            <tr>
+                <th>Phoneservice</th>
+                <td>{{ dataset.phoneservice }}</td>
+            </tr>
+            <tr>
+                <th>Multiplelines</th>
+                <td>{{ dataset.multiplelines }}</td>
+            </tr>
+            <tr>
+                <th>Internetservice</th>
+                <td>{{ dataset.internetservice }}</td>
+            </tr>
+            <tr>
+                <th>Onlinesecurity</th>
+                <td>{{ dataset.onlinesecurity }}</td>
+            </tr>
+            <tr>
+                <th>Onlinebackup</th>
+                <td>{{ dataset.onlinebackup }}</td>
+            </tr>
+            <tr>
+                <th>Deviceprotection</th>
+                <td>{{ dataset.deviceprotection }}</td>
+            </tr>
+            <tr>
+                <th>Techsupport</th>
+                <td>{{ dataset.techsupport }}</td>
+            </tr>
+            <tr>
+                <th>Streamingtv</th>
+                <td>{{ dataset.streamingtv }}</td>
+            </tr>
+            <tr>
+                <th>Streamingmovies</th>
+                <td>{{ dataset.streamingmovies }}</td>
+            </tr>
+            <tr>
+                <th>Contract</th>
+                <td>{{ dataset.contract }}</td>
+            </tr>
+            <tr>
+                <th>Paperlessbilling</th>
+                <td>{{ dataset.paperlessbilling }}</td>
+            </tr>
+            <tr>
+                <th>Paymentmethod</th>
+                <td>{{ dataset.paymentmethod }}</td>
+            </tr>
+            <tr>
+                <th>Tenure</th>
+                <td>{{ dataset.tenure }}</td>
+            </tr>
+            <tr>
+                <th>Monthlycharges</th>
+                <td>{{ dataset.monthlycharges }}</td>
+            </tr>
+            <tr>
+                <th>Totalcharges</th>
+                <td>{{ dataset.totalcharges }}</td>
+            </tr>
+            <tr>
+                <th>Churn</th>
+                <td>{{ dataset.churn }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('dataset_index') }}">back to list</a>
+
+    <a href="{{ path('dataset_edit', {'id': dataset.id}) }}">edit</a>
+
+    {{ include('dataset/_delete_form.html.twig') }}
+{% endblock %}

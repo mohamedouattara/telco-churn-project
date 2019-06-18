@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Dataset{% endblock %}
+
+{% block body %}
+    <h1>Edit Dataset</h1>
+
+    {{ include('dataset/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('dataset_index') }}">back to list</a>
+
+    {{ include('dataset/_delete_form.html.twig') }}
+{% endblock %}
