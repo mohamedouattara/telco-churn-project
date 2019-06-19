@@ -27,6 +27,9 @@ class DatasetController extends AbstractController
      */
     public function export(DatasetRepository $repository)
     {
+       // usually you'll want to make sure the user is authenticated first
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
         $spreadsheet = new Spreadsheet();
         $i = 2;
 
@@ -103,8 +106,14 @@ class DatasetController extends AbstractController
      */
     public function index(DatasetRepository $datasetRepository): Response
     {
+        // returns your User object, or null if the user is not authenticated
+        // use inline documentation to tell your editor your exact User class
+        // /** @var \App\Entity\User $user */
+        // $user = $this->getUser();
+
         return $this->render('dataset/index.html.twig', [
             'datasets' => $datasetRepository->findAll(),
+            'controller' => 'dataset_index',
         ]);
     }
 
@@ -127,6 +136,7 @@ class DatasetController extends AbstractController
 
         return $this->render('dataset/new.html.twig', [
             'dataset' => $dataset,
+            'controller' => 'dataset_new',
             'form' => $form->createView(),
         ]);
     }

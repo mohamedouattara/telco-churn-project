@@ -3,11 +3,17 @@
 {% block title %}Edit Dataset{% endblock %}
 
 {% block body %}
-    <h1>Edit Dataset</h1>
+    <div class="white-block">
+        <div class="row">
+            <div class="col s3"></div>
+            <div class="col s6">
+                <h3>Edit Dataset</h3>
 
-    {{ include('dataset/_form.html.twig', {'button_label': 'Update'}) }}
+                {{ include('dataset/_form.html.twig', {'button_label': 'Update'}) }}
+            </div>
+            <div class="col s3"></div>
+        </div>
+        <a class="btn" href="{{ path('dataset_index') }}">back to list</a>
+    </div>
 
-    <a href="{{ path('dataset_index') }}">back to list</a>
-
-    {{ include('dataset/_delete_form.html.twig') }}
 {% endblock %}

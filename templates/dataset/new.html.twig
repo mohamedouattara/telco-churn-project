@@ -3,9 +3,18 @@
 {% block title %}New Dataset{% endblock %}
 
 {% block body %}
-    <h1>Create new Dataset</h1>
+<div class="white-block">
+    <div class="row">
+        <div class="col s3"></div>
+        <div class="col s6">
+            <h3>Create new Dataset</h3>
 
-    {{ include('dataset/_form.html.twig') }}
+            {{ include('dataset/_form.html.twig') }}
+        </div>
+        <div class="col s3"></div>
+    </div>
 
-    <a href="{{ path('dataset_index') }}">back to list</a>
+
+    <a class="btn" href="{{ path('dataset_index') }}">back to list</a>
+</div>
 {% endblock %}
