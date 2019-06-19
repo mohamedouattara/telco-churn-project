@@ -2,11 +2,158 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Open+Sans&display=swap" rel="stylesheet">
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Compiled and minified JavaScript -->
+
+        <style>
+            body, html{
+                background-color: whitesmoke;
+                font-family:'Open Sans', sans-serif;
+                margin:0;
+                padding:0;
+                width:100%;
+                min-height: 100%;
+            }
+            h1,h2,h3,h4,h5,h6{
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            .white-block{
+                background: white;
+                margin:2%;
+                overflow: hidden;
+                box-shadow:0 0 2px gainsboro;
+                border-radius:5px;
+            }
+            .white-block .title{
+                background: transparent;
+                color:black;
+                text-align: left;
+                width:95%;
+                font-style: italic;
+                display: inline-block;
+                padding:0;
+                border-top:1px #06A1A8 solid;
+            }
+            .white-block .title span{
+                display: inline-block;
+                padding:10px 0 10px 70px;
+                position: relative;
+                border-bottom:2px #06A1A8 solid;
+            }
+            .white-block .back{
+                margin: 0;
+                height: 100%;
+                position: absolute;
+                width: 50px;
+                left: 0;
+                padding: 0;
+                top: 0;
+            }
+            .white-block .back i{
+                position: absolute;
+                top:50%;
+                left:50%;
+                transform: translateX(-50%) translateY(-50%);
+            }
+            .white-block .title span:after{
+                content:'';
+                position: absolute;
+                top:0;
+                left:0;
+                width: 105%;
+                height:2px;
+                background: #06A1A8;
+            }
+            .white-block .search{
+                text-align: left;
+                padding:0 2%;
+            }
+            .white-block .argument{
+                display: inline-block;
+                padding:5px 10px;
+
+            }
+            .white-block .argument .title{
+                font-weight: normal;
+                padding:0;
+                font-size: .8em;
+                font-style: italic;
+                text-transform: capitalize;
+            }
+            .white-block select,.white-block input{
+                border:none;
+                background: transparent;
+                outline:none;
+                border-bottom:1px gainsboro solid;
+                padding:5px 20px;
+            }
+            .white-block select:focus,.white-block input:focus{
+                border-bottom:2px #06A1A8 solid;
+            }
+
+            .nav-wrapper li{
+                font-weight:bolder;
+            }
+
+            .table-index thead, .table-index tbody{
+                font-size: small;
+            }
+
+            .btn i, .btn-large i, .btn-small i, .btn-floating i, .btn-large i, .btn-small i, .btn-flat i {
+                font-size: 1.0rem;
+                line-height: inherit;
+            }
+        </style>
     </head>
+
     <body>
-        {% block body %}{% endblock %}
+    <!--NAVBAR-->
+        <!-- Dropdown Structure -->
+        {#<ul id="dropdown1" class="dropdown-content">
+            <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">three</a></li>
+        </ul>#}
+        <nav>
+            <div class="nav-wrapper teal">
+                <a href="#!" class="brand-logo">Logo</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="{{ path('dataset_index') }}">Index</a></li>
+                    <li><a href="{{ path('dataset_new') }}">Add new item</a></li>
+                    <!-- Dropdown Trigger -->
+                    {#<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>#} </ul>
+            </div>
+        </nav>
+    <!--END NAVBAR-->
+
+
+    <div class="container-fluid">
+
+            {% block body %}{% endblock %}
+        </div>
+
         {% block javascripts %}{% endblock %}
+        <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            $(function(){
+                //$('.sidenav').sidenav();
+                //$(".dropdown-trigger").dropdown();
+                $('.tooltipped').tooltip();
+
+            });
+
+        </script>
     </body>
+
 </html>

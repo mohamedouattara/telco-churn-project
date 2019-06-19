@@ -55,27 +55,28 @@ class DatasetController extends AbstractController
         $sheet->setCellValue('U1', 'Churn');
 
         foreach ($repository->findAll() as $data){
+
             $sheet->setCellValue('A'.$i, $i-1);
             $sheet->setCellValue('B'.$i, $data->getGender());
-            $sheet->setCellValue('C'.$i, 'Hello World 3!');
-            $sheet->setCellValue('D'.$i, 'Hello World 4!');
-            $sheet->setCellValue('E'.$i, 'Hello World 4!');
-            $sheet->setCellValue('F'.$i, 'Hello World 4!');
-            $sheet->setCellValue('G'.$i, 'Hello World 4!');
-            $sheet->setCellValue('H'.$i, 'Hello World 4!');
-            $sheet->setCellValue('I'.$i, 'Hello World 4!');
-            $sheet->setCellValue('J'.$i, 'Hello World 4!');
-            $sheet->setCellValue('K'.$i, 'Hello World 4!');
-            $sheet->setCellValue('L'.$i, 'Hello World 4!');
-            $sheet->setCellValue('M'.$i, 'Hello World 4!');
-            $sheet->setCellValue('N'.$i, 'Hello World 4!');
-            $sheet->setCellValue('O'.$i, 'Hello World 4!');
-            $sheet->setCellValue('P'.$i, 'Hello World 4!');
-            $sheet->setCellValue('Q'.$i, 'Hello World 4!');
-            $sheet->setCellValue('R'.$i, 'Hello World 4!');
-            $sheet->setCellValue('S'.$i, 'Hello World 4!');
-            $sheet->setCellValue('T'.$i, 'Hello World 4!');
-            $sheet->setCellValue('U'.$i, 'Hello World 4!');
+            $sheet->setCellValue('C'.$i, $data->getSeniorcitizen());
+            $sheet->setCellValue('D'.$i, $data->getPartner());
+            $sheet->setCellValue('E'.$i, $data->getDependents());
+            $sheet->setCellValue('F'.$i, $data->getPhoneservice());
+            $sheet->setCellValue('G'.$i, $data->getMultiplelines());
+            $sheet->setCellValue('H'.$i, $data->getInternetservice());
+            $sheet->setCellValue('I'.$i, $data->getOnlinesecurity());
+            $sheet->setCellValue('J'.$i, $data->getOnlinebackup());
+            $sheet->setCellValue('K'.$i, $data->getDeviceprotection());
+            $sheet->setCellValue('L'.$i, $data->getTechsupport());
+            $sheet->setCellValue('M'.$i, $data->getStreamingtv());
+            $sheet->setCellValue('N'.$i, $data->getStreamingmovies());
+            $sheet->setCellValue('O'.$i, $data->getContract());
+            $sheet->setCellValue('P'.$i, $data->getPaperlessbilling());
+            $sheet->setCellValue('Q'.$i, $data->getPaymentmethod());
+            $sheet->setCellValue('R'.$i, $data->getTenure());
+            $sheet->setCellValue('S'.$i, $data->getMonthlycharges());
+            $sheet->setCellValue('T'.$i, $data->getTotalcharges());
+            $sheet->setCellValue('U'.$i, $data->getChurn());
 
             $i++;
         }

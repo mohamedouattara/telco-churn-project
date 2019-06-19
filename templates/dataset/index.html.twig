@@ -3,71 +3,94 @@
 {% block title %}Dataset index{% endblock %}
 
 {% block body %}
-    <h1>Dataset index</h1>
+    <div class="white-block" style="overflow:auto; padding:11px;">
+    <div class="row">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Gender</th>
-                <th>Seniorcitizen</th>
-                <th>Partner</th>
-                <th>Dependents</th>
-                <th>Phoneservice</th>
-                <th>Multiplelines</th>
-                <th>Internetservice</th>
-                <th>Onlinesecurity</th>
-                <th>Onlinebackup</th>
-                <th>Deviceprotection</th>
-                <th>Techsupport</th>
-                <th>Streamingtv</th>
-                <th>Streamingmovies</th>
-                <th>Contract</th>
-                <th>Paperlessbilling</th>
-                <th>Paymentmethod</th>
-                <th>Tenure</th>
-                <th>Monthlycharges</th>
-                <th>Totalcharges</th>
-                <th>Churn</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for dataset in datasets %}
-            <tr>
-                <td>{{ dataset.id }}</td>
-                <td>{{ dataset.gender }}</td>
-                <td>{{ dataset.seniorcitizen ? 'Yes' : 'No' }}</td>
-                <td>{{ dataset.partner }}</td>
-                <td>{{ dataset.dependents }}</td>
-                <td>{{ dataset.phoneservice }}</td>
-                <td>{{ dataset.multiplelines }}</td>
-                <td>{{ dataset.internetservice }}</td>
-                <td>{{ dataset.onlinesecurity }}</td>
-                <td>{{ dataset.onlinebackup }}</td>
-                <td>{{ dataset.deviceprotection }}</td>
-                <td>{{ dataset.techsupport }}</td>
-                <td>{{ dataset.streamingtv }}</td>
-                <td>{{ dataset.streamingmovies }}</td>
-                <td>{{ dataset.contract }}</td>
-                <td>{{ dataset.paperlessbilling }}</td>
-                <td>{{ dataset.paymentmethod }}</td>
-                <td>{{ dataset.tenure }}</td>
-                <td>{{ dataset.monthlycharges }}</td>
-                <td>{{ dataset.totalcharges }}</td>
-                <td>{{ dataset.churn }}</td>
-                <td>
-                    <a href="{{ path('dataset_show', {'id': dataset.id}) }}">show</a>
-                    <a href="{{ path('dataset_edit', {'id': dataset.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="22">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('dataset_new') }}">Create new</a>
+        <div class="row">
+            <div class="col s11"><h3 >Dataset index</h3></div>
+            <div class="col s1 valign-wrapper right" >
+                <a href="{{ path('dataset_export') }}" class="btn-small teal tooltipped" data-position="top" data-tooltip="Export dataset" style="margin-top: 51px"> <i class="material-icons">cloud_download</i></a>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <table class="table-index striped highlight responsive-table">
+                <thead class="teal white-text">
+                <tr >
+                    <th>Id</th>
+                    <th>Gender</th>
+                    <th>Senior citizen</th>
+                    <th>Partner</th>
+                    <th>Dependents</th>
+                    <th>Phone service</th>
+                    <th>Multiple lines</th>
+                    <th>Internet service</th>
+                    <th>Online security</th>
+                    <th>Online backup</th>
+                    <th>Device protection</th>
+                    <th>Tech support</th>
+                    <th>Streaming TV</th>
+                    <th>Streaming movies</th>
+                    <th>Contract</th>
+                    <th>Paperless billing</th>
+                    <th>Payment method</th>
+                    <th>Tenure</th>
+                    <th>Monthly charges</th>
+                    <th>Total charges</th>
+                    <th>Churn</th>
+                    <th style="text-align: center;">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for dataset in datasets %}
+                    <tr>
+                        <td>{{ dataset.id }}</td>
+                        <td>{{ dataset.gender }}</td>
+                        <td>{{ dataset.seniorcitizen ? 'Yes' : 'No' }}</td>
+                        <td>{{ dataset.partner }}</td>
+                        <td>{{ dataset.dependents }}</td>
+                        <td>{{ dataset.phoneservice }}</td>
+                        <td>{{ dataset.multiplelines }}</td>
+                        <td>{{ dataset.internetservice }}</td>
+                        <td>{{ dataset.onlinesecurity }}</td>
+                        <td>{{ dataset.onlinebackup }}</td>
+                        <td>{{ dataset.deviceprotection }}</td>
+                        <td>{{ dataset.techsupport }}</td>
+                        <td>{{ dataset.streamingtv }}</td>
+                        <td>{{ dataset.streamingmovies }}</td>
+                        <td>{{ dataset.contract }}</td>
+                        <td>{{ dataset.paperlessbilling }}</td>
+                        <td>{{ dataset.paymentmethod }}</td>
+                        <td>{{ dataset.tenure }}</td>
+                        <td>{{ dataset.monthlycharges }}</td>
+                        <td>{{ dataset.totalcharges }}</td>
+                        <td>{{ dataset.churn }}</td>
+                        <td style="display: flex;">
+                            <a class="btn tooltipped" data-position="top" data-tooltip="See more details" href="{{ path('dataset_show', {'id': dataset.id}) }}"><i class="material-icons">pageview</i></a>
+                            <a class="btn orange tooltipped" data-position="top" data-tooltip="Edit this item" href="{{ path('dataset_edit', {'id': dataset.id}) }}"><i class="material-icons">build</i></a>
+                            <form method="post" action="{{ path('dataset_delete', {'id': dataset.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ dataset.id) }}">
+                                <button class="btn red tooltipped" data-position="top" data-tooltip="Delete this item"><i class="material-icons">delete</i></button>
+                            </form>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="22">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <br>
+        <div class="col s12">
+            <a class="btn" href="{{ path('dataset_new') }}">Create new <i class="material-icons right">add</i></a>
+        </div>
+    </div>
+
+
+    </div>
 {% endblock %}
