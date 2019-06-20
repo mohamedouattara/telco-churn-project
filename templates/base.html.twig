@@ -15,7 +15,8 @@
 
         <style>
             body, html{
-                background-color: whitesmoke;
+                #background-color: whitesmoke;
+                background-color: #dfe4ea;
                 font-family:'Open Sans', sans-serif;
                 margin:0;
                 padding:0;
@@ -24,7 +25,7 @@
             }
             h1,h2,h3,h4,h5,h6{
                 font-family: 'Montserrat', sans-serif;
-                border-bottom: 1px solid teal;
+                border-bottom: 1px solid #a4b0be;
             }
 
             .white-block{
@@ -113,6 +114,10 @@
                 font-size: 1.0rem;
                 line-height: inherit;
             }
+
+            .btn{
+                background: #a4b0be;
+            }
         </style>
     </head>
 
@@ -135,7 +140,7 @@
 
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
         <nav>
-            <div class="nav-wrapper teal">
+            <div class="nav-wrapper" style="background:#3498db;">
                 <a href="#!" class="brand-logo"><img src="https://discordapp.com/assets/e7a3b51fdac2aa5ec71975d257d5c405.png" style="width:23%;" alt="" class="img-responsive"></a>
                 <ul class="right hide-on-med-and-down">
                     <li {% if controller is defined and controller == 'dataset_index'%}class="active" {% endif %} ><a href="{{ path('dataset_index') }}">Index</a></li>
