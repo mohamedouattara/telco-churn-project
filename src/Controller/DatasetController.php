@@ -5,9 +5,12 @@ namespace App\Controller;
 use App\Entity\Dataset;
 use App\Form\DatasetType;
 use App\Repository\DatasetRepository;
+use App\Services\EntityMaker;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
@@ -21,6 +24,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
  */
 class DatasetController extends AbstractController
 {
+
 
     /**
      * @Route("/export", name="dataset_export")
@@ -102,17 +106,37 @@ class DatasetController extends AbstractController
     }
 
     /**
-     * @Route("/", name="dataset_index", methods={"GET"})
+     * @Route("/{cache_reset}", name="dataset_index", methods={"GET"})
      */
-    public function index(DatasetRepository $datasetRepository): Response
+    public function index(DatasetRepository $datasetRepository, KernelInterface $kernel, $cache_reset=false): Response
     {
         // returns your User object, or null if the user is not authenticated
         // use inline documentation to tell your editor your exact User class
         // /** @var \App\Entity\User $user */
         // $user = $this->getUser();
 
+        $list_dir = array();
+        $entityMaker = new EntityMaker(null, [], new Filesystem(), $kernel);
+
+
+        if($handle = opendir('../templates')){
+
+            while(false !== ($entry = readdir($handle))){
+                if ($entry != "." and $entry != ".." and $entry != "base.html.twig" and $entry != "security" and $entry != "dataset" and $entry != "test" and $entry != 'generator'){
+                    array_push($list_dir, $entry);
+                }
+            }
+        }
+
+        if ($cache_reset){
+            $entityMaker->commandCacheClear();
+            $entityMaker->commandCacheWarmup();
+        }
+
+
         return $this->render('dataset/index.html.twig', [
             'datasets' => $datasetRepository->findAll(),
+            'templates' => $list_dir,
             'controller' => 'dataset_index',
         ]);
     }

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Conducteur{% endblock %}
+
+{% block body %}
+    <h1>Edit Conducteur</h1>
+
+    {{ include('conducteur/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('conducteur_index') }}">back to list</a>
+
+    {{ include('conducteur/_delete_form.html.twig') }}
+{% endblock %}

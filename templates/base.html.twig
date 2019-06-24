@@ -12,6 +12,10 @@
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
         <!-- Compiled and minified JavaScript -->
+       {# <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        #}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
         <style>
             body, html{
@@ -27,6 +31,12 @@
                 font-family: 'Montserrat', sans-serif;
                 border-bottom: 1px solid #a4b0be;
             }
+
+            thead{
+                background: #a4b0be;
+                color:white;
+            }
+
 
             .white-block{
                 background: white;
@@ -102,6 +112,18 @@
                 border-bottom:2px #06A1A8 solid;
             }
 
+            .white-block nav{
+                display:none;
+            }
+
+            .white-block .container-fluid h1{
+                margin-top: -13%;
+            }
+
+            .white-block .row .row h3{
+                display:none;
+            }
+
             .nav-wrapper li{
                 font-weight:bolder;
             }
@@ -118,40 +140,66 @@
             .btn{
                 background: #a4b0be;
             }
+
+
+
+
         </style>
     </head>
 
     <body>
-    <!--NAVBAR-->
-        <!-- Dropdown Structure -->
-        {#<ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">one</a></li>
-            <li><a href="#!">two</a></li>
-            <li class="divider"></li>
-            <li><a href="#!">three</a></li>
-        </ul>#}
-    <ul id="dropdown1" class="dropdown-content">
-       {# <li><a href="#!">one</a></li>#}
-        <li><a href="#!">Profile</a></li>
-        <li class="divider"></li>
-        <li class="red"><a href="{{ path('app_logout') }}" class="white-text"><i class="material-icons">exit_to_app</i> Logout</a></li>
-    </ul>
-
-
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <nav>
-            <div class="nav-wrapper" style="background:#3498db;">
-                <a href="#!" class="brand-logo"><img src="https://discordapp.com/assets/e7a3b51fdac2aa5ec71975d257d5c405.png" style="width:23%;" alt="" class="img-responsive"></a>
-                <ul class="right hide-on-med-and-down">
-                    <li {% if controller is defined and controller == 'dataset_index'%}class="active" {% endif %} ><a href="{{ path('dataset_index') }}">Index</a></li>
-                    <li {% if controller is defined and controller == 'dataset_new'%}class="active" {% endif %} ><a href="{{ path('dataset_new') }}">Add new item</a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"> Howdy! <span>{{ app.user.email }}</span></a></li>
-                    <!-- Dropdown Trigger -->
-                    {#<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>#} </ul>
-            </div>
-        </nav>
-    {% endif %}
+        {% block navbar %}
+            <!--NAVBAR-->
+            <!-- Dropdown Structure -->
+            {#<ul id="dropdown1" class="dropdown-content">
+                <li><a href="#!">one</a></li>
+                <li><a href="#!">two</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">three</a></li>
+            </ul>#}
+
+            <ul id="dropdown1" class="dropdown-content">
+                {# <li><a href="#!">one</a></li>#}
+                <li><a href="#!">Profile</a></li>
+                <li class="divider"></li>
+                <li class="red"><a href="{{ path('app_logout') }}" class="white-text"><i class="material-icons">exit_to_app</i> Logout</a></li>
+            </ul>
+
+
+
+            <nav>
+                <div class="nav-wrapper" style="background:#3498db;">
+                    <a href="{{ path('dataset_index') }}" class="brand-logo"><img src="https://discordapp.com/assets/e7a3b51fdac2aa5ec71975d257d5c405.png" style="width:23%;" alt="" class="img-responsive"></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li {% if controller is defined and controller == 'dataset_index'%}class="active" {% endif %} ><a href="{{ path('dataset_index') }}">Index</a></li>
+                        {#<li {% if controller is defined and controller == 'dataset_new'%}class="active" {% endif %} ><a href="{{ path('dataset_new') }}">Add new item</a></li>#}
+                        <li {% if controller is defined and controller == 'generator'%}class="active" {% endif %} ><a href="{{ path('generator') }}">Generator</a></li>
+                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"> Howdy! <span>{{ app.user.email }}</span></a></li>
+                        <!-- Dropdown Trigger -->
+                        {#<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>#} </ul>
+                </div>
+            </nav>
+        {% endblock %}
     <!--END NAVBAR-->
+
+    <!--MaterializeCSS Floating Button-->
+
+
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large" style="background:#3498db;">
+            <i class="large material-icons">mode_edit</i>
+        </a>
+        <ul>
+            <li><a href="{{ path('generator') }}" class="btn-floating blue tooltipped" data-position="left" data-tooltip="Generate new table"><i class="material-icons">insert_chart</i></a></li>
+            {#<li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>#}
+        </ul>
+    </div>
+    {% endif %}
+
+    <!--MaterializeCSS Floating Button end-->
 
 
     <div class="container-fluid">
@@ -160,14 +208,13 @@
         </div>
 
         {% block javascripts %}{% endblock %}
-        <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script>
             $(function(){
                 //$('.sidenav').sidenav();
                 $(".dropdown-trigger").dropdown();
                 $('.tooltipped').tooltip();
-
+                $('.fixed-action-btn').floatingActionButton();
             });
 
         </script>

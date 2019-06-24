@@ -2,6 +2,7 @@
 
 {% block title %}Dataset index{% endblock %}
 
+
 {% block body %}
     <div class="content" style="display: flex; flex-wrap: wrap;">
 
@@ -11,7 +12,7 @@
 
 
         <div class="row">
-            <div class="col s11"><h3 >Clients</h3></div>
+            <div class="col s11"><h1 >Clients</h1></div>
             <div class="col s1 valign-wrapper right" >
                 <a href="{{ path('dataset_export') }}" class="btn-small tooltipped" data-position="top" data-tooltip="Export dataset" style="margin-top: 51px;  background: #a4b0be;"> <i class="material-icons">cloud_download</i></a>
             </div>
@@ -98,99 +99,56 @@
     </div>
 
 
-    {#-------------------------------------------------------#}
 
-        <div class="white-block" style="overflow:auto; padding:11px; width:45%;">
-            <div class="row">
+        {% for template in templates %}
 
 
+
+            <div class="white-block" style="overflow:auto; padding:11px; width:45%;">
                 <div class="row">
-                    <div class="col s11"><h3 >Ventes</h3></div>
-                    <div class="col s1 valign-wrapper right" >
-                        <a href="{{ path('dataset_export') }}" class="btn-small tooltipped" data-position="top" data-tooltip="Export dataset" style="margin-top: 51px;  background: #a4b0be;"> <i class="material-icons">cloud_download</i></a>
+
+
+                    <div class="row">
+                        <div class="col s11"><h3 ></h3></div>
+                        <div class="col s1 valign-wrapper right" >
+                            <a href="{{ path('dataset_export') }}" class="btn-small tooltipped" data-position="top" data-tooltip="Export dataset" style="margin-top: 51px;  background: #a4b0be;"> <i class="material-icons">cloud_download</i></a>
+                        </div>
                     </div>
+
+                    <div class="col s12">
+
+                        {{ render(controller(
+                            'App\\Controller\\'~template|capitalize~'Controller::index'
+                        )) }}
+                    </div>
+
+                    <br>
+                    {# <div class="col s12">
+                         <a class="btn" style="background:#a4b0be;" href="{{ path('dataset_new') }}">Create new <i class="material-icons right">add</i></a>
+                     </div>#}
                 </div>
 
-                <div class="col s12">
-                    <table class="table-index striped responsive-table">
-                        <thead class="white-text" style="background:#a4b0be;">
-                        <tr >
-                            <th>Id</th>
-                            <th>Gender</th>
-                            <th>Senior citizen</th>
-                            <th>Partner</th>
-                            <th>Dependents</th>
-                            <th>Phone service</th>
-                            <th>Multiple lines</th>
-                            <th>Internet service</th>
-                            <th>Online security</th>
-                            {#  <th>Online backup</th>
-                              <th>Device protection</th>
-                              <th>Tech support</th>
-                              <th>Streaming TV</th>
-                              <th>Streaming movies</th>
-                              <th>Contract</th>
-                              <th>Paperless billing</th>
-                              <th>Payment method</th>
-                              <th>Tenure</th>
-                              <th>Monthly charges</th>
-                              <th>Total charges</th>#}
-                            <th>Churn</th>
-                            <th style="text-align: center;">Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for dataset in datasets %}
-                            <tr>
-                                <td>{{ dataset.id }}</td>
-                                <td>{{ dataset.gender }}</td>
-                                <td>{{ dataset.seniorcitizen ? 'Yes' : 'No' }}</td>
-                                <td>{{ dataset.partner }}</td>
-                                <td>{{ dataset.dependents }}</td>
-                                <td>{{ dataset.phoneservice }}</td>
-                                <td>{{ dataset.multiplelines }}</td>
-                                <td>{{ dataset.internetservice }}</td>
-                                <td>{{ dataset.onlinesecurity }}</td>
-                                {# <td>{{ dataset.onlinebackup }}</td>
-                                 <td>{{ dataset.deviceprotection }}</td>
-                                 <td>{{ dataset.techsupport }}</td>
-                                 <td>{{ dataset.streamingtv }}</td>
-                                 <td>{{ dataset.streamingmovies }}</td>
-                                 <td>{{ dataset.contract }}</td>
-                                 <td>{{ dataset.paperlessbilling }}</td>
-                                 <td>{{ dataset.paymentmethod }}</td>
-                                 <td>{{ dataset.tenure }}</td>
-                                 <td>{{ dataset.monthlycharges }}</td>
-                                 <td>{{ dataset.totalcharges }}</td>#}
-                                <td>{{ dataset.churn }}</td>
-                                <td style="display:flex;flex-direction:column;">
-                                    <a class="btn tooltipped" style="border-radius:23px; background:#2f3542; position:relative; height:23px;width: 10px" data-position="top" data-tooltip="See more details" href="{{ path('dataset_show', {'id': dataset.id}) }}"><i class="material-icons" style="position:relative;right: 7px; bottom: 7px;">remove_red_eye</i></a>
-                                    <a class="btn tooltipped" style="border-radius:23px; background:#2f3542; position:relative;; height:23px;width: 10px" data-position="top" data-tooltip="Edit this item" href="{{ path('dataset_edit', {'id': dataset.id}) }}"><i class="material-icons" style="position:relative;right: 7px; bottom: 7px;">build</i></a>
-                                    <form method="post" action="{{ path('dataset_delete', {'id': dataset.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
-                                        <input type="hidden" name="_method" value="DELETE">
-                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ dataset.id) }}">
-                                        <button class="btn tooltipped" style="border-radius:23px; background:#2f3542; position:relative;; height:23px;width: 10px" data-position="top" data-tooltip="Delete this item"><i class="material-icons" style="position:relative;right: 7px; bottom: 7px;">delete</i></button>
-                                    </form>
-                                </td>
-                            </tr>
-                        {% else %}
-                            <tr>
-                                <td colspan="22">no records found</td>
-                            </tr>
-                        {% endfor %}
-                        </tbody>
-                    </table>
-                </div>
 
-                <br>
-                <div class="col s12">
-                    <a class="btn" style="background:#a4b0be;" href="{{ path('dataset_new') }}">Create new <i class="material-icons right">add</i></a>
-                </div>
             </div>
 
+        {% endfor %}
 
-        </div>
+    </div>
 
+    {#-------------------------------------------------------#}
+
+
+
+
+    {#  <div class="white-block" style="overflow:auto; padding:11px; width:45%;">
+          <div class="row">
+
+              {{ include('voiture/index.html.twig', {'voitures':'test'}) }}
+
+          </div>
+
+      </div>
+#}
 
 
     </div>
