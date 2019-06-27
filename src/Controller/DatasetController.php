@@ -4,20 +4,28 @@ namespace App\Controller;
 
 use App\Entity\Dataset;
 use App\Form\DatasetType;
+use App\Repository\ActifRepository;
+
 use App\Repository\DatasetRepository;
 use App\Services\EntityMaker;
+use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Bridge\Doctrine\PropertyInfo\DoctrineExtractor;
+use Symfony\Bridge\Doctrine\RegistryInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\KernelInterface;
+use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
+use Symfony\Component\PropertyInfo\PropertyInfoExtractor;
 use Symfony\Component\Routing\Annotation\Route;
 
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
-
 // Include PhpSpreadsheet required namespaces
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
+
 
 /**
  * @Route("/dataset")
@@ -26,80 +34,78 @@ class DatasetController extends AbstractController
 {
 
 
+
+
     /**
-     * @Route("/export", name="dataset_export")
+     * @Route("/export/{table}", name="dataset_export")
      */
-    public function export(DatasetRepository $repository)
+    public function export(DatasetRepository $repository, RegistryInterface $registry ,$table)
     {
+
+        $reflectionExtractor = new ReflectionExtractor();
+        $doctrineExtractor = new DoctrineExtractor($this->getDoctrine()->getManager());
+
+        $propertyInfo = new PropertyInfoExtractor(
+        // List extractors
+            [
+                $reflectionExtractor,
+                $doctrineExtractor
+            ],
+            // Type extractors
+            [
+                $doctrineExtractor,
+                $reflectionExtractor
+            ]
+        );
+
+        $excelCell = range('A','Z');
+
+        $classname = '\App\Repository\\'.ucfirst($table).'Repository';
+        $repo = new $classname($registry);
+
+
+
+        $objects = $repo->findAll();
+
+        $objectProperties = $propertyInfo->getProperties($objects[0]);
+        $objectPropertiesLen = count($objectProperties);
+
+
        // usually you'll want to make sure the user is authenticated first
         $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
         $spreadsheet = new Spreadsheet();
-        $i = 2;
+
 
         $sheet = $spreadsheet->getActiveSheet();
 
-        $sheet->setCellValue('A1', "#");
-        $sheet->setCellValue('B1', 'Gender');
-        $sheet->setCellValue('C1', 'Senior citizen');
-        $sheet->setCellValue('D1', 'Partner');
-        $sheet->setCellValue('E1', 'Dependents');
-        $sheet->setCellValue('F1', 'Phone service');
-        $sheet->setCellValue('G1', 'Multiple lines');
-        $sheet->setCellValue('H1', 'Internet service');
-        $sheet->setCellValue('I1', 'Online security');
-        $sheet->setCellValue('J1', 'Online backup');
-        $sheet->setCellValue('K1', 'Device protection');
-        $sheet->setCellValue('L1', 'Tech support');
-        $sheet->setCellValue('M1', 'Streaming TV');
-        $sheet->setCellValue('N1', 'Streaming movies');
-        $sheet->setCellValue('O1', 'Contract');
-        $sheet->setCellValue('P1', 'Paperless billing');
-        $sheet->setCellValue('Q1', 'Payment method');
-        $sheet->setCellValue('R1', 'Tenure');
-        $sheet->setCellValue('S1', 'Monthly charges');
-        $sheet->setCellValue('T1', 'Total charges');
-        $sheet->setCellValue('U1', 'Churn');
-
-        foreach ($repository->findAll() as $data){
-
-            $sheet->setCellValue('A'.$i, $i-1);
-            $sheet->setCellValue('B'.$i, $data->getGender());
-            $sheet->setCellValue('C'.$i, $data->getSeniorcitizen());
-            $sheet->setCellValue('D'.$i, $data->getPartner());
-            $sheet->setCellValue('E'.$i, $data->getDependents());
-            $sheet->setCellValue('F'.$i, $data->getPhoneservice());
-            $sheet->setCellValue('G'.$i, $data->getMultiplelines());
-            $sheet->setCellValue('H'.$i, $data->getInternetservice());
-            $sheet->setCellValue('I'.$i, $data->getOnlinesecurity());
-            $sheet->setCellValue('J'.$i, $data->getOnlinebackup());
-            $sheet->setCellValue('K'.$i, $data->getDeviceprotection());
-            $sheet->setCellValue('L'.$i, $data->getTechsupport());
-            $sheet->setCellValue('M'.$i, $data->getStreamingtv());
-            $sheet->setCellValue('N'.$i, $data->getStreamingmovies());
-            $sheet->setCellValue('O'.$i, $data->getContract());
-            $sheet->setCellValue('P'.$i, $data->getPaperlessbilling());
-            $sheet->setCellValue('Q'.$i, $data->getPaymentmethod());
-            $sheet->setCellValue('R'.$i, $data->getTenure());
-            $sheet->setCellValue('S'.$i, $data->getMonthlycharges());
-            $sheet->setCellValue('T'.$i, $data->getTotalcharges());
-            $sheet->setCellValue('U'.$i, $data->getChurn());
-
+        //Excel File generation
+        $i = 0; // Selection des lettres de A-Z Colonnes
+        foreach ($objectProperties as $property){
+            $j = 2; // Selection des Chiffres de 1-N Lignes
+            $column = $excelCell[$i];
+            $sheet->setCellValue($column.'1', ucfirst($property));
+            foreach ($repo->findAll() as $data){
+                $my_getter ='get'.ucfirst($property);
+                $sheet->setCellValue($column.''.$j, $data->$my_getter());
+                $j++;
+            }
             $i++;
         }
 
-        $sheet->setTitle("Telco Churn DATASET");
+
+        $sheet->setTitle($table." DATASET");
 
         // Create your Office 2007 Excel (XLSX Format)
         $writer = new Xlsx($spreadsheet);
 
         // Create a Temporary file in the system
-        $fileName = 'telco_churn_dataset.xlsx';
+        $fileName = $table.'_dataset.xlsx';
+
         $temp_file = tempnam(sys_get_temp_dir(), $fileName);
-
         // Create the excel file in the tmp directory of the system
-        $writer->save($temp_file);
 
+        $writer->save($temp_file);
         // Return the excel file as an attachment
         return $this->file($temp_file, $fileName, ResponseHeaderBag::DISPOSITION_INLINE);
 

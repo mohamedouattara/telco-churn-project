@@ -3,24 +3,24 @@
 {% block title %}Hello GeneratorController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+
 
 <div class="example-wrapper">
-    <h3>Table Generator</h3>
 
     {{ form_start(form) }}
     {# render the task's only field: description #}
-    {{ form_row(form.libelle) }}
 
-    <ul class="champs" data-prototype="{{ form_widget(form.champs.vars.prototype)|e('html_attr') }}">
-        {# iterate over each existing tag and render its only field: name #}
-        {% for champ in form.champs %}
-            <li>{{ form_row(champ) }}</li>
-        {% endfor %}
-    </ul>
+    <div class="white-block" style="padding: 23px;">
+
+        <h3>Table Generator</h3>
+        {{ form_row(form.libelle) }}
+        <ul class="champs" data-prototype="{{ form_widget(form.champs.vars.prototype)|e('html_attr') }}">
+            {# iterate over each existing tag and render its only field: name #}
+            {% for champ in form.champs %}
+                <li class="generator-sub-content">{{ form_row(champ) }}</li>
+            {% endfor %}
+        </ul>
+    </div>
 
     <button class="btn">Generate Table</button>
     {{ form_end(form) }}
@@ -30,8 +30,8 @@
         var $collectionHolder;
 
         // setup an "add a tag" link
-        var $addTagButton = $('<button type="button" class="add_tag_link">Add a tag</button>');
-        var $newLinkLi = $('<li></li>').append($addTagButton);
+        var $addTagButton = $('<br><button type="button" class="add_tag_link btn-floating btn-large waves-effect waves-light teal" style="position: relative;"><i style="font-weight: bold;" class="material-icons">add</i></button>');
+        var $newLinkLi = $('<li class="generator-sub-content"></li>').append($addTagButton);
 
         jQuery(document).ready(function() {
 
@@ -82,14 +82,14 @@
                 $collectionHolder.data('index', index + 1);
 
                 // Display the form in the page in an li, before the "Add a tag" link li
-                var $newFormLi = $('<li></li>').append(newForm);
+                var $newFormLi = $('<li class="generator-sub-content"></li>').append(newForm);
                 $newLinkLi.before($newFormLi);
 
                 addTagFormDeleteLink($newFormLi);
             }
 
             function addTagFormDeleteLink($tagFormLi) {
-                var $removeFormButton = $('<button type="button">Delete this tag</button>');
+                var $removeFormButton = $('<br><button type="button" class="btn red"><i class="material-icons">delete</i></button>');
                 $tagFormLi.append($removeFormButton);
 
                 $removeFormButton.on('click', function(e) {

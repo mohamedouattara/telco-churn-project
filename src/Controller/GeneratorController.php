@@ -22,7 +22,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class GeneratorController extends AbstractController
 {
     /**
-     * @Route("/sanitizer/{table}", name="sanitizer")
+     * @Route("/delete/{table}", name="sanitizer")
      */
     public function tableRemove($table, KernelInterface $kernel)
     {

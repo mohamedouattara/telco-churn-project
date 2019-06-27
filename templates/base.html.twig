@@ -15,9 +15,12 @@
        {# <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         #}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@8.13.0/dist/sweetalert2.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.13.0/dist/sweetalert2.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
         <style>
+
             body, html{
                 #background-color: whitesmoke;
                 background-color: #dfe4ea;
@@ -36,6 +39,82 @@
                 background: #a4b0be;
                 color:white;
             }
+
+
+            .custom-container{
+                #background:white;
+                padding:23px;
+                margin:23px;
+            }
+
+
+            div.custom-container table.table tbody tr td a{
+                border-radius: 23px;
+                background: #2f3542;
+                position: relative;
+                height: 23px;
+                width: 10px;
+                color:white;
+                padding: 0 16px;
+
+                #border: none;
+                #border-radius: 2px;
+
+
+                line-height: 36px;
+
+                text-transform: uppercase;
+                vertical-align: middle;
+            }
+
+            div.container-fluid div.custom-container a{
+               text-decoration: none;
+               color: #fff;
+               background: #a4b0be;
+               text-align: center;
+               letter-spacing: .5px;
+               -webkit-transition: background-color .2s ease-out;
+               transition: background-color .2s ease-out;
+               cursor: pointer;
+                vertical-align: middle;
+
+                height: 36px;
+                margin-top: 7px;
+                display: inline-block;
+
+
+              /*
+              */
+           }
+
+
+            div.custom-container a:hover{
+                box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14),0 1px 7px 0 rgba(0,0,0,0.12),0 3px 1px -1px rgba(0,0,0,0.2);
+            }
+
+            div.custom-container div.custom-container table.table tbody tr td:last-child{
+                display: flex;
+                flex-direction: column;
+                position: relative;
+            }
+
+            div.custom-container div.custom-container table.table tbody tr td:last-child a{
+
+            }
+
+            ul.champs{
+                display: flex;
+                position: relative;
+                flex-wrap: wrap;
+                justify-content:space-around;
+            }
+
+            ul.champs li.generator-sub-content{
+                flex-wrap: wrap;
+                position: relative;
+
+            }
+
 
 
             .white-block{
@@ -170,12 +249,16 @@
 
             <nav>
                 <div class="nav-wrapper" style="background:#3498db;">
-                    <a href="{{ path('dataset_index') }}" class="brand-logo"><img src="https://discordapp.com/assets/e7a3b51fdac2aa5ec71975d257d5c405.png" style="width:23%;" alt="" class="img-responsive"></a>
+                    <a href="{{ path('dataset_index') }}" class="brand-logo">
+                        <h5 style="border-bottom: 0px ;">&nbsp;&nbsp;KERNEL IA</h5>
+                        {#<img src="https://discordapp.com/assets/e7a3b51fdac2aa5ec71975d257d5c405.png" style="width:23%;" alt="" class="img-responsive">#}
+                    </a>
                     <ul class="right hide-on-med-and-down">
-                        <li {% if controller is defined and controller == 'dataset_index'%}class="active" {% endif %} ><a href="{{ path('dataset_index') }}">Index</a></li>
+                        <li {% if controller is defined and controller == 'dataset_index'%}class="active" {% endif %} ><a href="{{ path('dataset_index') }}">All tables</a></li>
+                        <li ><a href="#!">Predictions</a></li>
                         {#<li {% if controller is defined and controller == 'dataset_new'%}class="active" {% endif %} ><a href="{{ path('dataset_new') }}">Add new item</a></li>#}
-                        <li {% if controller is defined and controller == 'generator'%}class="active" {% endif %} ><a href="{{ path('generator') }}">Generator</a></li>
-                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"> Howdy! <span>{{ app.user.email }}</span></a></li>
+                        {#<li {% if controller is defined and controller == 'generator'%}class="active" {% endif %} ><a href="{{ path('generator') }}">Generator</a></li>
+                        #}<li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><img src="https://placehold.it/50X50" class="responsive-img circle" alt=""></a></li>
                         <!-- Dropdown Trigger -->
                         {#<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>#} </ul>
                 </div>
@@ -187,9 +270,9 @@
 
 
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large" style="background:#3498db;">
-            <i class="large material-icons">mode_edit</i>
-        </a>
+        <button class="btn-floating btn-large" style="background:#3498db;">
+            <i class="large material-icons" style="font-size: 2rem">add</i>
+        </button>
         <ul>
             <li><a href="{{ path('generator') }}" class="btn-floating blue tooltipped" data-position="left" data-tooltip="Generate new table"><i class="material-icons">insert_chart</i></a></li>
             {#<li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
@@ -203,18 +286,43 @@
 
 
     <div class="container-fluid">
-
+        <div class="custom-container">
             {% block body %}{% endblock %}
         </div>
+    </div>
 
         {% block javascripts %}{% endblock %}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
         <script>
             $(function(){
+
+
+
+
                 //$('.sidenav').sidenav();
                 $(".dropdown-trigger").dropdown();
                 $('.tooltipped').tooltip();
                 $('.fixed-action-btn').floatingActionButton();
+
+
+                var btn_show_home = $('div.custom-container div.custom-container table.table tbody tr td:last-child a:nth-child(1)');
+                btn_show_home.html('<i class="material-icons" style="position:relative;right: 7px; bottom: 6px;font-size: 1rem">remove_red_eye</i>');
+
+                var btn_edit_home = $('div.custom-container div.custom-container table.table tbody tr td:last-child a:nth-child(2)');
+                btn_edit_home.html('<i class="material-icons" style="position:relative;right: 7px; bottom: 6px;font-size: 1rem">build</i>');
+
+                var btn_create_home = $('div.custom-container div.custom-container a:nth-child(3)');
+                btn_create_home.html('Create new <i class="material-icons right">add</i>');
+
+               /* Swal.fire({
+                    title: 'Welcome!',
+                    text: 'Do you want to continue',
+                    type: 'success',
+                    toast: true,
+                    confirmButtonText: 'Let\'s go!'
+                })*/
+
             });
 
         </script>
