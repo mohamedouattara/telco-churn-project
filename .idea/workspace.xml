@@ -2,15 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3e8bf7c-2b89-4bf7-8b2b-36c091b85391" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Entity/Test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/96e8a632-9823-4830-98ce-3ab336dc1403.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/96e8a632-9823-4830-98ce-3ab336dc1403.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DatasetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DatasetController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/EtudiantController.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GeneratorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GeneratorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TestController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ChampType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ChampType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/EntityMaker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/EntityMaker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Etudiant.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/EtudiantType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/TestType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/EtudiantRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TestRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/CRUDMaker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/CRUDMaker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/ControllerMaker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/ControllerMaker.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dataset/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dataset/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/etudiant/_delete.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/etudiant/_form.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/etudiant/edit.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/etudiant/index.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/etudiant/new.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/etudiant/show.html.twig" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,37 +58,90 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="telco-churn-db: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="telco-churn-db@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="telco-churn-db: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="user: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controller/GeneratorController.php">
+        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="73" column="64" selection-start-line="73" selection-start-column="64" selection-end-line="73" selection-end-column="64" />
+            <state relative-caret-position="645">
+              <caret line="148" selection-start-line="148" selection-end-line="148" />
               <folding>
-                <element signature="e#34#55#0#PHP" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/dataset/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="614">
+              <caret line="120" column="166" selection-start-line="120" selection-start-column="105" selection-end-line="120" selection-end-column="166" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#6126#6132#0#HTML" expanded="true" />
+                <element signature="e#6132#6138#0#HTML" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Services/CRUDMaker.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="109" selection-start-line="109" selection-end-line="109" />
+              <folding>
+                <element signature="e#189#443#0#PHP" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Services/CRUDMaker.php">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="37" column="101" selection-start-line="37" selection-start-column="101" selection-end-line="37" selection-end-column="101" />
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/etudiant/index.html.twig">
+        <entry file="file://$PROJECT_DIR$/src/Controller/GeneratorController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="140" selection-start-line="15" selection-start-column="140" selection-end-line="15" selection-end-column="140" />
+            <state relative-caret-position="390">
+              <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
+              <folding>
+                <element signature="e#34#55#0#PHP" expanded="true" />
+                <element signature="e#757#819#0#PHP" />
+                <element signature="e#824#1114#0#PHP" />
+                <element signature="e#1119#1176#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Services/ControllerMaker.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -86,8 +149,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/TestController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+            <state relative-caret-position="495">
+              <caret line="53" column="42" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
               <folding>
                 <element signature="e#34#63#0#PHP" expanded="true" />
               </folding>
@@ -109,6 +172,8 @@
       <find>command</find>
       <find>\&quot;</find>
       <find>dateti</find>
+      <find>redirectToRoute</find>
+      <find>show</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -117,7 +182,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/Security/LoginAuthenticator.php" />
         <option value="$PROJECT_DIR$/../wiassur/src/Entity/InsurerVariable.php" />
@@ -152,21 +216,23 @@
         <option value="$PROJECT_DIR$/../wiassur/templates/website/about.html.twig" />
         <option value="$PROJECT_DIR$/../wiassur/src/Controller/WebsiteController.php" />
         <option value="$PROJECT_DIR$/../wiassur/templates/website/partners.html.twig" />
-        <option value="$PROJECT_DIR$/templates/dataset/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/DatasetController.php" />
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
         <option value="$PROJECT_DIR$/vendor/symfony/maker-bundle/src/Maker/MakeCrud.php" />
-        <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/../wiassur/src/Repository/CustomerRepository.php" />
         <option value="$PROJECT_DIR$/src/Form/ChampType.php" />
-        <option value="$PROJECT_DIR$/src/Controller/GeneratorController.php" />
         <option value="$PROJECT_DIR$/src/Controller/TestController.php" />
         <option value="$PROJECT_DIR$/src/Services/EntityMaker.php" />
-        <option value="$PROJECT_DIR$/src/Services/ControllerMaker.php" />
         <option value="$PROJECT_DIR$/templates/eleve/show.html.twig" />
         <option value="$PROJECT_DIR$/src/Services/FormMaker.php" />
         <option value="$PROJECT_DIR$/templates/etudiant/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/GeneratorController.php" />
+        <option value="$PROJECT_DIR$/src/Services/ControllerMaker.php" />
+        <option value="$PROJECT_DIR$/templates/eleve/index.html.twig" />
+        <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/templates/dataset/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Services/CRUDMaker.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -320,13 +386,42 @@
             <path>
               <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="~/telco-churn-project" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/telco-churn-project" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Controller" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/telco-churn-project" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Entity" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/telco-churn-project" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Form" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/telco-churn-project" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Repository" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/telco-churn-project" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="Services" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="~/telco-churn-project" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="etudiant" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -410,18 +505,41 @@
       <workItem from="1561669922429" duration="1854000" />
       <workItem from="1561671883093" duration="1562000" />
       <workItem from="1561719533895" duration="1100000" />
-      <workItem from="1561732138205" duration="19950000" />
+      <workItem from="1561732138205" duration="35313000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179458000" />
+    <option name="totallyTimeSpent" value="194821000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-35" width="1922" height="1116" extended-state="6" />
+    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20437567" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21171919" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3282365" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Console" order="7" weight="0.3292683" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" weight="0.32925585" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4991708" weight="0.29357797" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50082916" side_tool="true" weight="0.4587156" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" sideWeight="0.49949032" visible="true" weight="0.20232172" />
+      <window_info anchor="right" x="0" y="0" width="413" height="884" id="Documentation" order="4" sideWeight="0.5005097" side_tool="true" weight="0.20619127" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21171919" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -434,36 +552,13 @@
       <window_info anchor="bottom" id="Database Console" order="7" weight="0.3292683" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="10" weight="0.3292683" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4991708" visible="true" weight="0.28656715" />
+      <window_info anchor="bottom" id="Database Changes" order="10" weight="0.32925585" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4991708" weight="0.29357797" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50082916" side_tool="true" weight="0.4587156" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" sideWeight="0.49949032" visible="true" weight="0.19530416" />
-      <window_info anchor="right" x="0" y="0" width="413" height="884" id="Documentation" order="4" sideWeight="0.5005097" side_tool="true" weight="0.20619127" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20437567" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32925585" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Console" order="7" weight="0.3292683" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Database Changes" order="10" weight="0.3292683" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4991708" visible="true" weight="0.2874618" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50082916" side_tool="true" weight="0.4587156" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" sideWeight="0.49949032" visible="true" weight="0.19530416" />
+      <window_info active="true" anchor="right" id="Database" order="3" sideWeight="0.49949032" visible="true" weight="0.20232172" />
       <window_info anchor="right" x="0" y="0" width="413" height="884" id="Documentation" order="4" sideWeight="0.5005097" side_tool="true" weight="0.20619127" />
     </layout-to-restore>
   </component>
@@ -471,38 +566,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://df6e6f3b-d8d7-4ddd-b7d4-889fa2e9da60/schema/wiassur/table/actif">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://df6e6f3b-d8d7-4ddd-b7d4-889fa2e9da60/schema/wiassur/table/object_type">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true">
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/src/Controller/AvenantController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="79" column="48" selection-start-line="79" selection-start-column="48" selection-end-line="79" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/src/Entity/Actif.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3361">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../wiassur/templates/avenant/update.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="519">
@@ -635,24 +698,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Kernel.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="273" column="41" selection-start-line="273" selection-start-column="41" selection-end-line="273" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#i#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dataset/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2220">
-          <caret line="148" column="62" selection-start-line="148" selection-start-column="62" selection-end-line="148" selection-end-column="62" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/DatasetController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -807,9 +852,6 @@
     <entry file="file://$PROJECT_DIR$/templates/eleve/_form.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/eleve/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/eleve/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -827,13 +869,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Services/ControllerMaker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Services/EntityMaker.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -846,42 +881,121 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../wiassur/templates/contrat/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-855" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/etudiant/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="16" lean-forward="true" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/TestController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+        <state relative-caret-position="495">
+          <caret line="53" column="42" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
           <folding>
             <element signature="e#34#63#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/templates/contrat/show.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Entity/Etudiant.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-855" />
+        <state relative-caret-position="135">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://96e8a632-9823-4830-98ce-3ab336dc1403/schema/telco-churn-db/table/eleve">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://96e8a632-9823-4830-98ce-3ab336dc1403/schema/telco-churn-db/table/etudiant">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true">
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/ControllerMaker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/GeneratorController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="73" column="64" selection-start-line="73" selection-start-column="64" selection-end-line="73" selection-end-column="64" />
+        <state relative-caret-position="390">
+          <caret line="74" column="34" selection-start-line="74" selection-start-column="34" selection-end-line="74" selection-end-column="34" />
           <folding>
             <element signature="e#34#55#0#PHP" expanded="true" />
+            <element signature="e#757#819#0#PHP" />
+            <element signature="e#824#1114#0#PHP" />
+            <element signature="e#1119#1176#0#PHP" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/etudiant/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/eleve/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="140" selection-start-line="15" selection-start-column="140" selection-end-line="15" selection-end-column="140" />
+        <state relative-caret-position="465">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="148" selection-start-line="148" selection-end-line="148" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dataset/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="614">
+          <caret line="120" column="166" selection-start-line="120" selection-start-column="105" selection-end-line="120" selection-end-column="166" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#6126#6132#0#HTML" expanded="true" />
+            <element signature="e#6132#6138#0#HTML" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#span#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Services/CRUDMaker.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="37" column="101" selection-start-line="37" selection-start-column="101" selection-end-line="37" selection-end-column="101" />
+        <state relative-caret-position="420">
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
+          <folding>
+            <element signature="e#189#443#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>

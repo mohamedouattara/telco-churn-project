@@ -67,7 +67,7 @@ class ControllerMaker{
                 $entityManager->persist($'.$lowercaseEntityName.');
                 $entityManager->flush();
     
-                return $this->redirectToRoute(\''.$lowercaseEntityName.'_index\');
+                return $this->redirectToRoute(\'dataset_index\');
             }
     
             return $this->render(\''.$lowercaseEntityName.'/new.html.twig\', [
@@ -98,7 +98,7 @@ class ControllerMaker{
                 $this->getDoctrine()->getManager()->flush();
     
                 return $this->redirectToRoute(\''.$lowercaseEntityName.'_index\', [
-                    \'id\' => $'.$lowercaseEntityName.'->getId(),
+                    //\'id\' => $'.$lowercaseEntityName.'->getId(),
                 ]);
             }
     
@@ -119,7 +119,7 @@ class ControllerMaker{
                 $entityManager->flush();
             }
     
-            return $this->redirectToRoute(\''.$lowercaseEntityName.'_index\');
+            return $this->redirectToRoute(\'dataset_index\');
         }
     }
     

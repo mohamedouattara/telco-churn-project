@@ -79,9 +79,8 @@ class GeneratorController extends AbstractController
                     array_push($fields, ['field'=> $tmp_str, 'type' => $champ->getTypeChamp(), 'nullable' => true]);
 
                 $table->addChamp($champ);
-                //dump($tmp_str);
+
             }
-            //exit;
 
 
 

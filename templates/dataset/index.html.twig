@@ -105,26 +105,23 @@
 
 
                {# <div class="white-block" style="overflow:auto; padding:11px; width:45%;">#}
-                <div class="white-block" style="overflow:auto; padding:11px; width:45%;">
+                <div class="white-block col s12"  style="overflow:auto; padding:11px; width:45%;" >
+
                     <div class="row">
 
-
-                        <div class="row">
-                            <div class="col s11">
-
-                                <a href="{{ path('dataset_export', {'table': template}) }}" class="btn-small tooltipped" data-position="top" data-tooltip="Export dataset" style="margin-top: 51px;  background: #a4b0be;"> <i class="material-icons">cloud_download</i></a>
-                                &nbsp;&nbsp;<a href="{{ path('sanitizer', {'table': template}) }}" class="btn-small red tooltipped" data-position="top" data-tooltip="Delete dataset" style="margin-top: 51px;  background: #a4b0be;"> <i class="material-icons">delete</i></a>
-
-                            </div>
-                            <div class="col s1 valign-wrapper left" >
-                                 </div>
-                        </div>
-
                         <div class="col s12">
+
 
                             {{ render(controller(
                                 'App\\Controller\\'~template|capitalize~'Controller::index'
                             )) }}
+
+                            <span class="export-delete-actions">
+
+                            <a href="{{ path('dataset_export', {'table': template}) }}" class="btn-small tooltipped" data-position="top" data-tooltip="Export dataset" style="margin-top: 51px;  background: #a4b0be;"> <i class="material-icons">cloud_download</i></a>
+                            &nbsp;&nbsp;<a href="{{ path('sanitizer', {'table': template}) }}" class="btn-small red tooltipped" data-position="top" data-tooltip="Delete dataset" style="margin-top: 51px;  background: #a4b0be;"> <i class="material-icons">delete</i></a>
+
+                        </span>
                         </div>
 
                         <br>
@@ -136,10 +133,12 @@
 
                 </div>
 
+
             {% endfor %}
 
         {% else %}
-            <div class="white-block" style="overflow:auto; padding:11px; width:100%;">
+            <div class="white-block" style="overflow:auto; padding:11px; width:35%;">
+
                 <div class="row">
                         <div class="col s12" >
                             <div class="sub-content valign" style="height:250px;border:3px dashed teal;">

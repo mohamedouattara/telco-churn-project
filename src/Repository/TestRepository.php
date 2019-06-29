@@ -2,25 +2,25 @@
 
         namespace App\Repository;
         
-        use App\Entity\Etudiant;
+        use App\Entity\Test;
         use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
         use Symfony\Bridge\Doctrine\RegistryInterface;
         
         /**
-         * @method Etudiant|null find($id, $lockMode = null, $lockVersion = null)
-         * @method Etudiant|null findOneBy(array $criteria, array $orderBy = null)
-         * @method Etudiant[]    findAll()
-         * @method Etudiant[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+         * @method Test|null find($id, $lockMode = null, $lockVersion = null)
+         * @method Test|null findOneBy(array $criteria, array $orderBy = null)
+         * @method Test[]    findAll()
+         * @method Test[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
          */
-        class EtudiantRepository extends ServiceEntityRepository
+        class TestRepository extends ServiceEntityRepository
         {
             public function __construct(RegistryInterface $registry)
             {
-                parent::__construct($registry, Etudiant::class);
+                parent::__construct($registry, Test::class);
             }
             
           // /**
-            //  * @return Etudiant[] Returns an array of Person objects
+            //  * @return Test[] Returns an array of Person objects
             //  */
             /*
             public function findByExampleField($value)
@@ -37,7 +37,7 @@
             */
         
             /*
-            public function findOneBySomeField($value): ?Etudiant
+            public function findOneBySomeField($value): ?Test
             {
                 return $this->createQueryBuilder("p")
                     ->andWhere("p.exampleField = :val")
