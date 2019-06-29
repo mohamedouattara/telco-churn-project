@@ -39,9 +39,17 @@
                 margin-top:auto;
             }
 
+            div.dataTables_length label select{
+                display: flex;
+                height:27px;
+            }
+
+            div.dataTables_filter > label:nth-child(1) > input:nth-child(1){
+                height:27px;
+            }
 
             thead{
-                background: #a4b0be;
+                background: #3498db;
                 color:white;
             }
 
@@ -284,7 +292,7 @@
                         <li ><a href="#!">Predictions</a></li>
                         {#<li {% if controller is defined and controller == 'dataset_new'%}class="active" {% endif %} ><a href="{{ path('dataset_new') }}">Add new item</a></li>#}
                         {#<li {% if controller is defined and controller == 'generator'%}class="active" {% endif %} ><a href="{{ path('generator') }}">Generator</a></li>
-                        #}<li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><img src="https://placehold.it/50X50" class="responsive-img circle" alt=""></a></li>
+                        #}<li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><img style="margin: 6px;" src="https://placehold.it/50X50" class="responsive-img circle" alt=""></a></li>
                         <!-- Dropdown Trigger -->
                         {#<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>#} </ul>
                 </div>
@@ -334,13 +342,16 @@
 
                 $('div.container-fluid table.table').DataTable(
                     {
-                        "lengthMenu": [[3,5,10, 25, 50, -1], [3, 5, 10, 25, 50, "All"]]
+                        "lengthMenu": [
+                            [3,5,10, 25, 50, -1], //Values
+                            [3, 5, 10, 25, 50, "All"] //Labels
+                        ]
                     }
                 );
 
 
                 //Datatable custom display
-                $('div.dataTables_length label select').css('display', 'flex');
+               // $('div.dataTables_length label select').css('display', 'flex');
                /* var btn_show_home = $('div.custom-container div.custom-container table.table tbody tr td:last-child a:nth-child(1)');
                 btn_show_home.html('<i class="material-icons" style="position:relative;right: 7px; bottom: 6px;font-size: 1rem">remove_red_eye</i>');
 
@@ -350,16 +361,23 @@
                 var btn_create_home = $('div.custom-container div.custom-container a:nth-child(3)');
                 btn_create_home.html('Create new <i class="material-icons right">add</i>');*/
 
-               /* Swal.fire({
-                    title: 'Welcome!',
-                    text: 'Do you want to continue',
-                    type: 'success',
-                    toast: true,
-                    confirmButtonText: 'Let\'s go!'
-                })*/
+             /*  var btnDelete = $('.deleteBtn');
 
+               btnDelete.click(function(){
+                   Swal.fire({
+                       title: 'Welcome!',
+                       text: 'Do you want to delete this table',
+                       type: 'error',
+                       //toast: true,
+                       confirmButtonText: 'Let\'s go!'
+                   })
+               });
+
+
+
+
+*/
             });
-
         </script>
     </body>
 

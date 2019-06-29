@@ -65,13 +65,13 @@ class CRUDMaker{
 
         $generatedFormTemplate = '{{ form_start(form) }}
                                    {{ form_widget(form) }}
-                                    <button class=\'btn teal\'>{{ button_label|default(\'Save\') }}</button>
+                                    <button class=\'btn \' style="background:#3498db;">{{ button_label|default(\'Save\') }}</button>
                                 {{ form_end(form) }}';
 
         $generatedFormDelete = '<form method=\'post\' action=\'{{ path(\''.$lowercaseEntityName.'_delete\', {\'id\': '.$lowercaseEntityName.'.id}) }}\' onsubmit=\'return confirm("Are you sure you want to delete this item?");\'>
                                     <input type=\'hidden\' name=\'_method\' value=\'DELETE\'>
                                     <input type=\'hidden\' name=\'_token\' value=\'{{ csrf_token("delete" ~ '.$lowercaseEntityName.'.id) }}\'>
-                                    <button class=\'btn red\'><i class="material-icons">delete</i></button>
+                                    <button class=\'btn red\' style="margin-top: 50px;position: relative;left: -88px;"><i class="material-icons">delete</i></button>
                                 </form>';
 
         //{% extends 'base.html.twig' %}
@@ -79,7 +79,7 @@ class CRUDMaker{
                             {#{% block title %}'.$capitalizeEntityName.' index{% endblock %}#}
                             
                             {% block body %}
-                                <h1>'.$capitalizeEntityName.' </h1>
+                                <h3 style="margin-bottom: 0px;">'.$capitalizeEntityName.' </h3>
                             
                                 <table class="table">
                                     <thead>
@@ -94,7 +94,7 @@ class CRUDMaker{
                                         '.$this->tableElements("td", $lowercaseEntityName).'
                                             <td style="display:flex;flex-direction: column;">
                                                 <a href="{{ path(\''.$lowercaseEntityName.'_show\', {\'id\': '.$lowercaseEntityName.'.id}) }}"><i style="font-size:x-small;" class="material-icons tooltipped" data-position="left" data-tooltip="Show">remove_red_eye</i></a>
-                                                <a href="{{ path(\''.$lowercaseEntityName.'_edit\', {\'id\': '.$lowercaseEntityName.'.id}) }}"><i style="font-size:x-small;"  class="material-icons tooltipped" data-position="left" data-tooltip="Edit">build</i></a>
+                                                {#<a href="{{ path(\''.$lowercaseEntityName.'_edit\', {\'id\': '.$lowercaseEntityName.'.id}) }}"><i style="font-size:x-small;"  class="material-icons tooltipped" data-position="left" data-tooltip="Edit">build</i></a>#}
                                             </td>
                                         </tr>
                                     {% else %}
@@ -105,7 +105,7 @@ class CRUDMaker{
                                     </tbody>
                                 </table>
                             
-                                <a href="{{ path(\''.$lowercaseEntityName.'_new\') }}" class="btn teal" class="margin-top:15px;">Create new <i class="material-icons">add</i></a>
+                                <a href="{{ path(\''.$lowercaseEntityName.'_new\') }}" class="btn" style="margin-top:15px;background:#3498db;">Create new <i class="material-icons">add</i></a>
                             {% endblock %}';
 
         $generatedEdit = '{% extends \'base.html.twig\' %}
@@ -119,7 +119,7 @@ class CRUDMaker{
                                 {{ include(\''.$lowercaseEntityName.'/_form.html.twig\', {\'button_label\': \'Update\'}) }}
                                 <div class="button-container">
                                     <div class="child-button-container">
-                                        <a href="{{ path(\'dataset_index\') }}" class="btn">back to list</a>
+                                        <a href="{{ path(\'dataset_index\') }}" class="btn" style="margin-left: 10px;">back</a>
                                         {{ include(\''.$lowercaseEntityName.'/_delete.html.twig\') }}
                                      </div>
                                 </div>
@@ -137,7 +137,7 @@ class CRUDMaker{
                             
                                 {{ include(\''.$lowercaseEntityName.'/_form.html.twig\') }}
                             
-                                <a href="{{ path(\'dataset_index\') }}" style="position: relative;left: 75px;bottom: 36px;" class="btn">back to list</a>
+                                <a href="{{ path(\'dataset_index\') }}" style="position: relative;left: 75px;bottom: 36px;" class="btn">back</a>
                             </div>
                             {% endblock %}';
 
@@ -156,7 +156,7 @@ class CRUDMaker{
                                 </table>
                                 <div class="button-container" >
                                 
-                                    <a href="{{ path(\'dataset_index\') }}" class="btn">back to list</a>
+                                    <a href="{{ path(\'dataset_index\') }}" class="btn">back</a>
                                     <a href="{{ path(\''.$lowercaseEntityName.'_edit\', {\'id\': '.$lowercaseEntityName.'.id}) }}" class="btn orange"><i class="material-icons">build</i></a>
                                     {{ include(\''.$lowercaseEntityName.'/_delete.html.twig\') }}
                                 </div>

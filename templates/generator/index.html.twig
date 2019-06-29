@@ -22,7 +22,7 @@
         </ul>
     </div>
 
-    <button class="btn">Generate Table</button>
+    <button class="btn-large" style="margin-left: 31px;background:#3498db;">Generate Table</button>
     {{ form_end(form) }}
 </div>
 
@@ -30,7 +30,7 @@
         var $collectionHolder;
 
         // setup an "add a tag" link
-        var $addTagButton = $('<br><button type="button" class="add_tag_link btn-floating btn-large waves-effect waves-light teal" style="position: relative;"><i style="font-weight: bold;" class="material-icons">add</i></button>');
+        var $addTagButton = $('<br><button type="button" class="add_tag_link btn-large waves-effect waves-light" style="position: relative;background:#3498db;"><i style="font-weight: bold;" class="material-icons">add</i></button>');
         var $newLinkLi = $('<li class="generator-sub-content"></li>').append($addTagButton);
 
         jQuery(document).ready(function() {
