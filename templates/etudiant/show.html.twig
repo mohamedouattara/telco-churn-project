@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+                            {% block title %}Etudiant{% endblock %}
+                            
+                            {% block body %}
+                                <h1>Etudiant</h1>
+                            
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                        <th>Nom</th>
+                                        <td>{{etudiant.nom}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Age</th>
+                                        <td>{{etudiant.age}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Datedenaissance</th>
+                                        <td>{{etudiant.datedenaissance|date('d-m-Y')}}</td>
+                                    </tr>
+                                    
+                                    </tbody>
+                                </table>
+                            
+                                <a href="{{ path('etudiant_index') }}">back to list</a>
+                            
+                                <a href="{{ path('etudiant_edit', {'id': etudiant.id}) }}">edit</a>
+                            
+                                {{ include('etudiant/_delete.html.twig') }}
+                            {% endblock %}

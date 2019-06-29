@@ -20,19 +20,22 @@ class TestController extends AbstractController
      */
     public function index(KernelInterface $kernel)
     {
+
+
+
         $result ="";
         //Parameters
         $fields = array(
            ['field' => 'nomeleve', 'type' => 'string', 'length' => 255, 'nullable' => true],
            ['field' => 'prenomeleve', 'type' => 'string', 'length' => 255, 'nullable' => true],
            ['field' => 'lieunaissance', 'type' => 'string', 'length' => 255, 'nullable' => true],
-           ['field' => 'ageeleve', 'type' => 'integer', 'nullable' => true],
-           ['field' => 'total', 'type' => 'integer', 'nullable' => true],
+           ['field' => 'ageeleve', 'type' => 'float', 'nullable' => true],
+           ['field' => 'total', 'type' => 'float', 'nullable' => true],
            ['field' => 'classe', 'type' => 'String', 'length' => 255, 'nullable' => true],
            ['field' => 'tata', 'type' => 'String', 'length' => 255, 'nullable' => true],
         );
 
-        $entityMaker = new EntityMaker("Arbre", $fields, new Filesystem(), $kernel);
+        $entityMaker = new EntityMaker("Eleve", $fields, new Filesystem(), $kernel);
 
 
         $generationResult = $entityMaker->buildEntity();

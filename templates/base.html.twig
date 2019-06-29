@@ -16,6 +16,7 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         #}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@8.13.0/dist/sweetalert2.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.13.0/dist/sweetalert2.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -33,6 +34,10 @@
             h1,h2,h3,h4,h5,h6{
                 font-family: 'Montserrat', sans-serif;
                 border-bottom: 1px solid #a4b0be;
+            }
+
+            .container-fluid .custom-container h1{
+                color:white;
             }
 
             thead{
@@ -293,6 +298,7 @@
 
         {% block javascripts %}{% endblock %}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
         <script>
             $(function(){
@@ -304,6 +310,16 @@
                 $(".dropdown-trigger").dropdown();
                 $('.tooltipped').tooltip();
                 $('.fixed-action-btn').floatingActionButton();
+
+                $('table.table').DataTable();
+
+                var heading_text = $('.container-fluid .custom-container h1');
+                heading_text.each(function(){
+                    //$(this).css('color', 'white');
+                    var select_first = $(this).html().split(" ")[0];
+                    $(this).css('color','black').html(select_first);
+                });
+                //alert(heading_text.html());
 
 
                 var btn_show_home = $('div.custom-container div.custom-container table.table tbody tr td:last-child a:nth-child(1)');

@@ -17,7 +17,8 @@ class ChampType extends AbstractType
             ->add('typeChamp', ChoiceType::class, [
                 'choices'  => [
                     'Chaine de caractère' => 'string',
-                    'Nombre Entier' => 'integer',
+                    'Date' => 'datetime',
+                    'Numérique' => 'float',
                 ],
                 'attr' => ['class' => 'browser-default']
             ])

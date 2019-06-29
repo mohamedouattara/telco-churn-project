@@ -4,7 +4,7 @@ namespace App\Services;
 
 
 
-use Doctrine\Common\Collections\ArrayCollection;
+//use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
@@ -18,17 +18,17 @@ class EntityMaker
     private $fs;
     private $projectPath;
 
-public function __construct($entityName = Null, $fields = [], Filesystem $filesystem , KernelInterface $kernel)
+public function __construct($entityName = Null, $fields = [], Filesystem $filesystem , KernelInterface $kernel, $filepath ='/../home/mohamed/telco-churn-project/')
     {
         $this->entityName = ucfirst(strtolower($entityName));
         $this->fields = $fields;
         $this->fs = $filesystem;
         $this->kernel = $kernel;
-        $this->projectPath = sys_get_temp_dir().'/../home/mohamed/telco-churn-project/';
+        $this->projectPath = sys_get_temp_dir().$filepath;
     }
 
 
-    private function attributeGenerator(){
+    private function entityAttributeGenerator(){
         $result = '';
         foreach ($this->fields as $field){
             if (strtolower($field['type']) == 'string') {
@@ -38,11 +38,18 @@ public function __construct($entityName = Null, $fields = [], Filesystem $filesy
              */
             private $'.$field["field"].';';
 
-            }elseif (strtolower($field['type']) == 'integer'){
+            }elseif (strtolower($field['type']) == 'float'){
 
                 $result .= '
              /**
-             * @ORM\Column(type="integer", nullable=true)
+             * @ORM\Column(type="float", nullable=true)
+             */
+              private $'.$field['field'].';';
+            }elseif (strtolower($field['type']) == 'datetime'){
+
+                $result .= '
+             /**
+             * @ORM\Column(type="datetime", nullable=true)
              */
               private $'.$field['field'].';';
             }
@@ -51,7 +58,7 @@ public function __construct($entityName = Null, $fields = [], Filesystem $filesy
         return $result;
     }
 
-    private function methodGenerator(){
+    private function entityMethodGenerator(){
             $result = '
                 public function getId(): ?int
                 {
@@ -74,15 +81,30 @@ public function __construct($entityName = Null, $fields = [], Filesystem $filesy
                             return $this;
                         }
                     ';
-                }elseif (strtolower($field['type']) == 'integer'){
+                }elseif (strtolower($field['type']) == 'float'){
                     $result .='
                     
-                         public function get'.ucfirst($field["field"]).'(): ?int
+                         public function get'.ucfirst($field["field"]).'(): ?float
                         {
                             return $this->'.strtolower($field["field"]).';
                         }
                     
-                        public function set'.ucfirst($field["field"]).'(?int $'.strtolower($field["field"]).'): self
+                        public function set'.ucfirst($field["field"]).'(?float $'.strtolower($field["field"]).'): self
+                        {
+                            $this->'.strtolower($field["field"]).' = $'.strtolower($field["field"]).';
+                    
+                            return $this;
+                        }
+                    ';
+                }elseif (strtolower($field['type']) == 'datetime'){
+                    $result .='
+                    
+                         public function get'.ucfirst($field["field"]).'(): ?\DateTimeInterface
+                        {
+                            return $this->'.strtolower($field["field"]).';
+                        }
+                    
+                        public function set'.ucfirst($field["field"]).'(?\DateTimeInterface $'.strtolower($field["field"]).'): self
                         {
                             $this->'.strtolower($field["field"]).' = $'.strtolower($field["field"]).';
                     
@@ -95,24 +117,7 @@ public function __construct($entityName = Null, $fields = [], Filesystem $filesy
             return $result;
     }
 
-    public function removeEntity($table = Null){
-        if ($table != Null){
-            if($this->fs->exists($this->projectPath.'templates/'.strtolower($table)))
-                $this->fs->remove($this->projectPath.'templates/'.strtolower($table));
-            if($this->fs->exists($this->projectPath.'src/Form/'.ucfirst($table).'Type.php'))
-                $this->fs->remove($this->projectPath.'src/Form/'.ucfirst($table).'Type.php');
-            if($this->fs->exists($this->projectPath.'src/Controller/'.ucfirst($table).'Controller.php'))
-                $this->fs->remove($this->projectPath.'src/Controller/'.ucfirst($table).'Controller.php');
-            if($this->fs->exists($this->projectPath.'src/Repository/'.ucfirst($table).'Repository.php'))
-                $this->fs->remove($this->projectPath.'src/Repository/'.ucfirst($table).'Repository.php');
-            if($this->fs->exists($this->projectPath.'src/Entity/'.ucfirst($table).'.php'))
-                $this->fs->remove($this->projectPath.'src/Entity/'.ucfirst($table).'.php');
 
-            $this->commandSanitizerLauncher();
-        }else{
-
-        }
-    }
 
     public function buildEntity(){
 
@@ -143,9 +148,9 @@ public function __construct($entityName = Null, $fields = [], Filesystem $filesy
                  */
                 private $id;
           ';
-        $generatedEntity .= $this->attributeGenerator();
+        $generatedEntity .= $this->entityAttributeGenerator();
 
-        $generatedEntity .= $this->methodGenerator();
+        $generatedEntity .= $this->entityMethodGenerator();
 
         $generatedEntity.= "}";
 
@@ -248,25 +253,52 @@ public function __construct($entityName = Null, $fields = [], Filesystem $filesy
 
 
 
+
             }catch (\Exception $e){
                 return "Message : ".$e->getMessage();
             }
 
             $this->commandLauncher();
+            $this->makeCRUDCustom($this->entityName,$this->projectPath,$this->fs,$this->fields);
 
 
 
             return $generationResult;
+
+
         }
+
+
+
+
+    public function removeEntity($table = Null){
+        if ($table != Null){
+            if($this->fs->exists($this->projectPath.'templates/'.strtolower($table)))
+                $this->fs->remove($this->projectPath.'templates/'.strtolower($table));
+            if($this->fs->exists($this->projectPath.'src/Form/'.ucfirst($table).'Type.php'))
+                $this->fs->remove($this->projectPath.'src/Form/'.ucfirst($table).'Type.php');
+            if($this->fs->exists($this->projectPath.'src/Controller/'.ucfirst($table).'Controller.php'))
+                $this->fs->remove($this->projectPath.'src/Controller/'.ucfirst($table).'Controller.php');
+            if($this->fs->exists($this->projectPath.'src/Repository/'.ucfirst($table).'Repository.php'))
+                $this->fs->remove($this->projectPath.'src/Repository/'.ucfirst($table).'Repository.php');
+            if($this->fs->exists($this->projectPath.'src/Entity/'.ucfirst($table).'.php'))
+                $this->fs->remove($this->projectPath.'src/Entity/'.ucfirst($table).'.php');
+
+            $this->commandSanitizerLauncher();
+        }else{
+
+        }
+    }
+
 
         //Execution des commandes de creation de CRUD
     private function commandLauncher(){
         $_1= $this->commandSchemaUpdate();
-        $_2= $this->commandMakeCRUD();
+       // $_2= $this->commandMakeCRUD();
     }
 
     private function commandSanitizerLauncher(){
-        $this->commandSchemaUpdate();
+        $_1= $this->commandSchemaUpdate();
     }
 
     private function commandSchemaUpdate(){
@@ -282,6 +314,17 @@ public function __construct($entityName = Null, $fields = [], Filesystem $filesy
         $output = new BufferedOutput();
         $application->run($input, $output);
         return $output->fetch();
+    }
+
+    public function makeCRUDCustom($entityname, $projectPath, $filesystem, $fields){
+        $controllerMaker = new ControllerMaker($entityname, $projectPath, $filesystem);
+        $formMaker = new FormMaker($entityname,$projectPath, $filesystem, $fields);
+        $CRUDMaker = new CRUDMaker($entityname,$projectPath,$fields,$filesystem);
+
+        $controllerMaker->buildController();
+        $formMaker->buildCustomForm();
+        $CRUDMaker->buildTemplates();
+
     }
 
     private function commandMakeCRUD(){

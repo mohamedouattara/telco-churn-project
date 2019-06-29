@@ -39,7 +39,7 @@ class DatasetController extends AbstractController
     /**
      * @Route("/export/{table}", name="dataset_export")
      */
-    public function export(DatasetRepository $repository, RegistryInterface $registry ,$table)
+    public function export(RegistryInterface $registry ,$table)
     {
 
         $reflectionExtractor = new ReflectionExtractor();
@@ -66,32 +66,37 @@ class DatasetController extends AbstractController
 
 
         $objects = $repo->findAll();
-
-        $objectProperties = $propertyInfo->getProperties($objects[0]);
-        $objectPropertiesLen = count($objectProperties);
-
-
-       // usually you'll want to make sure the user is authenticated first
-        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
-
-        $spreadsheet = new Spreadsheet();
+        $objectsCount = count($objects);
+        if ($objectsCount > 0){
+            $objectProperties = $propertyInfo->getProperties($objects[0]);
+            // $objectPropertiesLen = count($objectProperties);
 
 
-        $sheet = $spreadsheet->getActiveSheet();
+            // usually you'll want to make sure the user is authenticated first
+            $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
-        //Excel File generation
-        $i = 0; // Selection des lettres de A-Z Colonnes
-        foreach ($objectProperties as $property){
-            $j = 2; // Selection des Chiffres de 1-N Lignes
-            $column = $excelCell[$i];
-            $sheet->setCellValue($column.'1', ucfirst($property));
-            foreach ($repo->findAll() as $data){
-                $my_getter ='get'.ucfirst($property);
-                $sheet->setCellValue($column.''.$j, $data->$my_getter());
-                $j++;
+            $spreadsheet = new Spreadsheet();
+
+
+            $sheet = $spreadsheet->getActiveSheet();
+
+            //Excel File generation
+            $i = 0; // Selection des lettres de A-Z Colonnes
+            foreach ($objectProperties as $property){
+                $j = 2; // Selection des Chiffres de 1-N Lignes
+                $column = $excelCell[$i];
+                $sheet->setCellValue($column.'1', ucfirst($property));
+                foreach ($repo->findAll() as $data){
+                    $my_getter ='get'.ucfirst($property);
+                    $sheet->setCellValue($column.''.$j, $data->$my_getter());
+                    $j++;
+                }
+                $i++;
             }
-            $i++;
+        }else{
+            return $this->redirectToRoute('dataset_index');
         }
+
 
 
         $sheet->setTitle($table." DATASET");

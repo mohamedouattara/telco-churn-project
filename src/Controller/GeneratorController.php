@@ -55,25 +55,35 @@ class GeneratorController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
 
-            $tableViewData = $form->getData()['libelle'];
+            $tableViewData = strtolower(str_replace([' ', '_','-','/','*','#'], '',$form->getData()['libelle']));
+           // $tableViewData = strtolower(str_replace(['é', 'è','ê'], 'e',$form->getData()['libelle']));
+           // $tableViewData = strtolower(str_replace(['à', 'â','@'], 'a',$form->getData()['libelle']));
             $champs = $form->getData()['champs'];
             $fields = [];
 
             $table = new Table();
             $table->setLibelle($tableViewData);
 
+
+
             foreach ($champs as $champ){
                 $tmp_str = strtolower(str_replace([' ', '_','-','/','*','#'], '',$champ->getlibelleChamp()));
+                //$tmp_str = strtolower(str_replace(['é', 'è','ê'], 'e',$champ->getlibelleChamp()));
+                //$tmp_str = strtolower(str_replace(['à', 'â','@'], 'a',$champ->getlibelleChamp()));
 
                 if (strtolower($champ->getTypeChamp()) == 'string')
                     array_push($fields, ['field'=> $tmp_str, 'type' => $champ->getTypeChamp(),'length' => 255, 'nullable' => true]);
-                elseif (strtolower($champ->getTypeChamp()) == 'integer')
+                elseif (strtolower($champ->getTypeChamp()) == 'float')
+                    array_push($fields, ['field'=> $tmp_str, 'type' => $champ->getTypeChamp(), 'nullable' => true]);
+                elseif (strtolower($champ->getTypeChamp()) == 'datetime')
                     array_push($fields, ['field'=> $tmp_str, 'type' => $champ->getTypeChamp(), 'nullable' => true]);
 
                 $table->addChamp($champ);
                 //dump($tmp_str);
             }
             //exit;
+
+
 
             $entityMaker = new EntityMaker($tableViewData, $fields, new Filesystem(), $kernel);
 
