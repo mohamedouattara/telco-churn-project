@@ -32,19 +32,21 @@ class EnumFieldMaker{
         $my_attributes = '';
 
 
-        foreach ($this->fields as $field){
-            if (is_array($field['field'])){
-                $this->select_label = array_pop($field['field']);
-                $options = $field['field'];
 
-                foreach ($options as $option){
+        foreach ($this->fields as $field){ // [[petit, grand, taille], [blanc, noir, couleur]]
+
+            if (is_array($field['field'])){ // oui un tableau
+                $this->select_label = array_pop($field['field']);//$this->select_value = taille et $field = [petit, grand]
+                $options = $field['field']; // $options = [petit, grand]
+
+                foreach ($options as $option){ //$this->select_value = taille et $options = [petit, grand]
                     $my_attributes .= '
                     const '.strtoupper($this->select_label).'_'.strtoupper($option).'= "'.strtolower($option).'";
                     ';
                     array_push($this->availableOptions, 'self::'.strtoupper($this->select_label).'_'.strtoupper($option));
                 }
-                $this->tmpoptionsarray = $this->availableOptions;
-                unset($this->availableOptions);
+                $this->tmpoptionsarray = $this->availableOptions; //$this->tmpoptionsarray = [self::TAILLE_PETIT, self::TAILLE_GRNAD]
+                $this->availableOptions = array(); //$this->tmpoptionsarray = null
                 $my_attributes .= '
                 /** @var array user friendly named '.strtolower($this->select_label).' */
                 protected static $'.strtolower($this->select_label).'Name = [
@@ -55,50 +57,39 @@ class EnumFieldMaker{
                     self::'.strtoupper($this->select_label).'_'.strtoupper($option).' => "'.ucfirst($option).'",
                     ';
                 }
-                $my_attributes .='];';
+                $my_attributes .='];
+                
+                ';
+
+
+                $my_attributes .= '
+                    /**
+                     * @param  string $'.strtolower($this->select_label).'ShortName
+                     * @return string
+                     */
+                    public static function get'.ucfirst($this->select_label).'Name($'.strtolower($this->select_label).'ShortName)
+                    {
+                        if (!isset(static::$'.strtolower($this->select_label).'Name[$'.strtolower($this->select_label).'ShortName])) {
+                            return "Unknown '.strtolower($this->select_label).' ($'.strtolower($this->select_label).'ShortName)";
+                        }
+                
+                        return static::$'.strtolower($this->select_label).'Name[$'.strtolower($this->select_label).'ShortName];
+                    }
+                
+                    public static function getAvailable'.ucfirst($this->select_label).'s()
+                    {
+                      
+                        return ['.implode(',', $this->tmpoptionsarray).'];
+                    }
+                    ';
 
             }
+
         }
 
         return $my_attributes;
     }
 
-    public function buildClassMethods(){
-        $my_methods = '
-    /**
-     * @param  string $'.strtolower($this->select_label).'ShortName
-     * @return string
-     */
-    public static function get'.ucfirst($this->select_label).'Name($'.strtolower($this->select_label).'ShortName)
-    {
-        if (!isset(static::$'.strtolower($this->select_label).'Name[$'.strtolower($this->select_label).'ShortName])) {
-            return "Unknown '.strtolower($this->select_label).' ($'.strtolower($this->select_label).'ShortName)";
-        }
-
-        return static::$'.strtolower($this->select_label).'Name[$'.strtolower($this->select_label).'ShortName];
-    }
-
-    public static function getAvailable'.ucfirst($this->select_label).'s()
-    {
-      
-        return ['.implode(',', $this->tmpoptionsarray).'];
-    }
-    ';
-
-    return $my_methods;
-    }
-
-    public function array2str($myarray){
-        $buff = '[';
-        foreach ($myarray as $key => $ligne)
-        {
-            $buff.= $ligne.',';
-        }
-
-        $buff .= ']';
-
-        return $buff;
-    }
 
 
     public function buildTypeEnum(){
@@ -120,7 +111,7 @@ namespace App\Form\Enums;
 abstract class '.$capitalizeEntityName.'TypeEnum {';
 
 $generatedTypeEnum .= $this->buildClassAttributes();
-$generatedTypeEnum .= $this->buildClassMethods();
+//$generatedTypeEnum .= $this->buildClassMethods();
 
 
 $generatedTypeEnum .='}';
