@@ -27,15 +27,26 @@ class CRUDMaker{
 
         if ($balise == 'th' and $isShowed == false){
             foreach ($this->fields as $field){
-                $tableHeaderData .= '<th>'.ucfirst($field['field']).'</th>';
+                if(is_array($field['field'])){
+                    $select_label = array_pop($field['field']);
+                    $tableHeaderData .= '<th>'.ucfirst($select_label).'</th>';
+                }
+                else
+                    $tableHeaderData .= '<th>'.ucfirst($field['field']).'</th>';
             }
             return $tableHeaderData;
         }elseif ($balise == 'td' and $isShowed == false){
             foreach ($this->fields as $field){
-                if ($field['type'] != 'datetime')
-                    $tableData .= '<td>{{'.$entityName.'.'.strtolower($field['field']).'}}</td>';
-                else
-                    $tableData .= '<td>{{'.$entityName.'.'.strtolower($field['field']).'|date(\'d-m-Y\')}}</td>';
+                if(is_array($field['field'])){
+                    $select_label = array_pop($field['field']);
+                    $tableData .= '<td>{{'.$entityName.'.'.strtolower($select_label).'}}</td>';
+                }else{
+                    if ($field['type'] != 'datetime')
+                        $tableData .= '<td>{{'.$entityName.'.'.strtolower($field['field']).'}}</td>';
+                    else
+                        $tableData .= '<td>{{'.$entityName.'.'.strtolower($field['field']).'|date(\'d-m-Y\')}}</td>';
+                }
+
 
             }
             return $tableData;
@@ -43,14 +54,27 @@ class CRUDMaker{
 
             foreach ($this->fields as $field){
                 $temp = '';
+                if(is_array($field['field'])){
+                    $select_label = array_pop($field['field']);
+                    $temp = '{{'.$entityName.'.'.strtolower($select_label).'}}';
+                }else{
 
-                if ($field['type'] != 'datetime')
-                    $temp = '{{'.$entityName.'.'.strtolower($field['field']).'}}';
-                else
-                    $temp = '{{'.$entityName.'.'.strtolower($field['field']).'|date(\'d-m-Y\')}}';
+                    if ($field['type'] != 'datetime')
+                        $temp = '{{'.$entityName.'.'.strtolower($field['field']).'}}';
+                    else
+                        $temp = '{{'.$entityName.'.'.strtolower($field['field']).'|date(\'d-m-Y\')}}';
+                }
+
+                if(is_array($field['field']))
+                {
+                   $headertemp = ucfirst(array_pop($field['field']));
+                }else{
+                    $headertemp = ucfirst($field['field']);
+                }
+
 
                 $presentationData .= '<tr>
-                                        <th>'.ucfirst($field['field']).'</th>
+                                        <th>'.$headertemp.'</th>
                                         <td>'.$temp.'</td>
                                     </tr>
                                     ';

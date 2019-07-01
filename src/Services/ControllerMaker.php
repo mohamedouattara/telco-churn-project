@@ -97,7 +97,7 @@ class ControllerMaker{
             if ($form->isSubmitted() && $form->isValid()) {
                 $this->getDoctrine()->getManager()->flush();
     
-                return $this->redirectToRoute(\''.$lowercaseEntityName.'_index\', [
+                return $this->redirectToRoute(\'dataset_index\', [
                     //\'id\' => $'.$lowercaseEntityName.'->getId(),
                 ]);
             }

@@ -9,10 +9,9 @@
 </style>
 
 <div class="example-wrapper">
-{#{{ output }}
-
-    {% for dir in dirs  %}
-        {% include dir~'/index.html.twig' %}
-    {% endfor %}#}
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class='btn ' style="background:#3498db;">Save</button>
+    {{ form_end(form) }}
 </div>
 {% endblock %}

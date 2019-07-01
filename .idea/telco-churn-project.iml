@@ -121,5 +121,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="wiassur" />
+    <orderEntry type="library" name="materialize" level="application" />
   </component>
 </module>

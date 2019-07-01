@@ -31,8 +31,26 @@ class FormMaker{
                 $myfunction .= '->add(\''.ucfirst($field["field"]).'\', DateType::class, [\'widget\' => \'single_text\',])';
             }elseif($field['type'] == 'float'){
                 $myfunction .= '->add(\''.ucfirst($field["field"]).'\', NumberType::class)';
-            }else{
-                $myfunction .= '->add(\''.ucfirst($field["field"]).'\')';
+            }elseif($field['type'] == 'string'){
+                if (is_array($field['field'])){
+                    $select_label_lower = strtolower(array_pop($field['field']));
+                    $select_label_uc = ucfirst($select_label_lower);
+                    $entity_uc = ucfirst($this->entityName);
+
+                    $myfunction .= '->add(\''.$select_label_lower.'\', ChoiceType::class, array(
+                                                                        \'required\' => true,
+                                                                        \'choices\' => '.$entity_uc.'TypeEnum::getAvailable'.$select_label_uc.'s(),
+                                                                        \'choice_label\' => function($choice) {
+                                                                            return '.$entity_uc.'TypeEnum::get'.$select_label_uc.'Name($choice);
+                                                                        },
+                                                                    ))
+                    ';
+
+
+                }else{
+                    $myfunction .= '->add(\''.ucfirst($field["field"]).'\')';
+                }
+
             }
         }
         $myfunction .= ';
@@ -41,7 +59,20 @@ class FormMaker{
         return $myfunction;
     }
 
+    public function buildFormEnum(){
+        foreach ($this->fields as $field){
+
+            if (is_array($field['field'])){
+
+                $enumMaker = new EnumFieldMaker($this->entityName,$this->projectPath,$this->fs,$this->fields);
+                $enumMaker->buildTypeEnum();
+                break;
+            }
+        }
+    }
     public function buildCustomForm(){
+
+        $this->buildFormEnum();
 
         $capitalizeEntityName = ucfirst($this->entityName);
         $lowercaseEntityName = strtolower($this->entityName);
@@ -61,6 +92,8 @@ class FormMaker{
         use Symfony\Component\OptionsResolver\OptionsResolver;
         use Symfony\Component\Form\Extension\Core\Type\DateType;
         use Symfony\Component\Form\Extension\Core\Type\NumberType;
+        use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+        use App\Form\Enums\\'.$capitalizeEntityName.'TypeEnum;
         
         class '.$capitalizeEntityName.'Type extends AbstractType
         {

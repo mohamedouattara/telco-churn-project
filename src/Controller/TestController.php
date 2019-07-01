@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Message;
+use App\Form\Enums\MessageTypeEnum;
+use App\Form\MessageType;
 use App\Services\EntityMaker;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
@@ -10,6 +13,7 @@ use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -18,12 +22,13 @@ class TestController extends AbstractController
     /**
      * @Route("/test", name="test")
      */
-    public function index(KernelInterface $kernel)
+    public function index(KernelInterface $kernel, Request $request)
     {
 
 
+        //dump(MessageTypeEnum::getAvailableTypes());
 
-        $result ="";
+        /*$result ="";
         //Parameters
         $fields = array(
            ['field' => 'nomeleve', 'type' => 'string', 'length' => 255, 'nullable' => true],
@@ -45,14 +50,26 @@ class TestController extends AbstractController
             $result = "L'entité et le repository de l'entité ont été créés avec succès";
         }else{
             //$entityMaker->abortGeneration();
+        }*/
+
+
+        $message = new Message();
+        $form = $this->createForm(MessageType::class, $message);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            dump($form->getData());
+            exit;
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($message);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('dataset_index');
         }
-
-
-
 
         return $this->render('test/index.html.twig', [
             'controller_name' => 'TestController',
-            'output' => $result,
+            'form' => $form->createView(),
         ]);
     }
 

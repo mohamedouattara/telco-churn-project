@@ -20,7 +20,7 @@ class EntityMaker
 
 public function __construct($entityName = Null, $fields = [], Filesystem $filesystem , KernelInterface $kernel, $filepath ='/../home/mohamed/telco-churn-project/')
     {
-        $this->entityName = ucfirst(strtolower($entityName));
+        $this->entityName = ucfirst($entityName);
         $this->fields = $fields;
         $this->fs = $filesystem;
         $this->kernel = $kernel;
@@ -30,13 +30,25 @@ public function __construct($entityName = Null, $fields = [], Filesystem $filesy
 
     private function entityAttributeGenerator(){
         $result = '';
-        foreach ($this->fields as $field){
+        foreach ($this->fields as $field){ // field est une chaine de caractère ou un tableau avec le premier élément étant le nom du champ
+
             if (strtolower($field['type']) == 'string') {
-            $result .= '
-            /**
-             * @ORM\Column(type="string", length='.$field["length"].', nullable=true)
-             */
-            private $'.$field["field"].';';
+                if (is_array($field['field'])){
+                    $result .= '
+                    /**
+                     * @ORM\Column(type="string", length='.$field["length"].', nullable=true)
+                     */
+                    private $'.strtolower(array_pop($field["field"])).';';
+
+                }else{
+                    $result .= '
+                    /**
+                     * @ORM\Column(type="string", length='.$field["length"].', nullable=true)
+                     */
+                    private $'.strtolower($field["field"]).';';
+
+                }
+
 
             }elseif (strtolower($field['type']) == 'float'){
 
@@ -68,7 +80,31 @@ public function __construct($entityName = Null, $fields = [], Filesystem $filesy
 
             foreach ($this->fields as $field){
                 if (strtolower($field['type']) == 'string') {
-                    $result .='
+                    if (is_array($field['field'])){
+
+                        $select_label_uc = ucfirst(array_pop($field['field']));
+                        $select_label_lower = strtolower($select_label_uc);
+
+                        $result .='
+                        public function get'.$select_label_uc.'(): ?string
+                        { 
+                            return $this->'.$select_label_lower.';
+                        }
+                        public function set'.$select_label_uc.'($'.$select_label_lower.')
+                        {
+                            if (!in_array($'.$select_label_lower.', '.$this->entityName.'TypeEnum::getAvailable'.$select_label_uc.'s())) {
+                                throw new \InvalidArgumentException("Invalid '.$select_label_lower.'");
+                            }
+                    
+                            $this->'.$select_label_lower.' = $'.$select_label_lower.';
+                    
+                            return $this;
+                        }
+                    ';
+
+                    }else{
+
+                        $result .='
                         public function get'.ucfirst($field["field"]).'(): ?string
                         {
                             return $this->'.strtolower($field["field"]).';
@@ -81,6 +117,10 @@ public function __construct($entityName = Null, $fields = [], Filesystem $filesy
                             return $this;
                         }
                     ';
+
+                    }
+
+
                 }elseif (strtolower($field['type']) == 'float'){
                     $result .='
                     
@@ -114,6 +154,8 @@ public function __construct($entityName = Null, $fields = [], Filesystem $filesy
                 }
             }
 
+
+
             return $result;
     }
 
@@ -135,6 +177,7 @@ public function __construct($entityName = Null, $fields = [], Filesystem $filesy
             namespace App\Entity;
             
             use Doctrine\ORM\Mapping as ORM;
+            use App\Form\Enums\\'.$this->entityName.'TypeEnum;
             
             /**
              * @ORM\Entity(repositoryClass="App\Repository\\'.$this->entityName.'Repository")
@@ -153,6 +196,8 @@ public function __construct($entityName = Null, $fields = [], Filesystem $filesy
         $generatedEntity .= $this->entityMethodGenerator();
 
         $generatedEntity.= "}";
+
+
 
         $generatedEntityRepository .= '<?php
 
@@ -277,6 +322,8 @@ public function __construct($entityName = Null, $fields = [], Filesystem $filesy
                 $this->fs->remove($this->projectPath.'templates/'.strtolower($table));
             if($this->fs->exists($this->projectPath.'src/Form/'.ucfirst($table).'Type.php'))
                 $this->fs->remove($this->projectPath.'src/Form/'.ucfirst($table).'Type.php');
+            if($this->fs->exists($this->projectPath.'src/Form/Enums/'.ucfirst($table).'TypeEnum.php'))
+                $this->fs->remove($this->projectPath.'src/Form/Enums/'.ucfirst($table).'TypeEnum.php');
             if($this->fs->exists($this->projectPath.'src/Controller/'.ucfirst($table).'Controller.php'))
                 $this->fs->remove($this->projectPath.'src/Controller/'.ucfirst($table).'Controller.php');
             if($this->fs->exists($this->projectPath.'src/Repository/'.ucfirst($table).'Repository.php'))

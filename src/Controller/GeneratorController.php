@@ -71,9 +71,17 @@ class GeneratorController extends AbstractController
                 //$tmp_str = strtolower(str_replace(['é', 'è','ê'], 'e',$champ->getlibelleChamp()));
                 //$tmp_str = strtolower(str_replace(['à', 'â','@'], 'a',$champ->getlibelleChamp()));
 
-                if (strtolower($champ->getTypeChamp()) == 'string')
-                    array_push($fields, ['field'=> $tmp_str, 'type' => $champ->getTypeChamp(),'length' => 255, 'nullable' => true]);
-                elseif (strtolower($champ->getTypeChamp()) == 'float')
+                if (strtolower($champ->getTypeChamp()) == 'string'){
+                    $temp_array = explode(';',$tmp_str);
+                    if (count($temp_array) == 1){
+                        $tmp_str = $temp_array[0];
+                        array_push($fields, ['field'=> $tmp_str, 'type' => $champ->getTypeChamp(),'length' => 255, 'nullable' => true]);
+                    } elseif (count($temp_array) > 1){
+                        array_push($fields, ['field'=> $temp_array, 'type' => $champ->getTypeChamp(),'length' => 255, 'nullable' => true]);
+                    }
+                    //Recupére la longueur du tableau après avoir fais un split sur point virgule
+                    //Si longueur supérieur à 1 alors construction d'un select sinon traitement normal
+                }elseif (strtolower($champ->getTypeChamp()) == 'float')
                     array_push($fields, ['field'=> $tmp_str, 'type' => $champ->getTypeChamp(), 'nullable' => true]);
                 elseif (strtolower($champ->getTypeChamp()) == 'datetime')
                     array_push($fields, ['field'=> $tmp_str, 'type' => $champ->getTypeChamp(), 'nullable' => true]);
@@ -82,10 +90,7 @@ class GeneratorController extends AbstractController
 
             }
 
-
-
             $entityMaker = new EntityMaker($tableViewData, $fields, new Filesystem(), $kernel);
-
             $entityMaker->buildEntity();
 
 
