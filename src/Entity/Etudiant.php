@@ -3,6 +3,7 @@
             namespace App\Entity;
             
             use Doctrine\ORM\Mapping as ORM;
+            use App\Form\Enums\EtudiantTypeEnum;
             
             /**
              * @ORM\Entity(repositoryClass="App\Repository\EtudiantRepository")
@@ -16,18 +17,22 @@
                  */
                 private $id;
           
-            /**
-             * @ORM\Column(type="string", length=255, nullable=true)
+                    /**
+                     * @ORM\Column(type="string", length=255, nullable=true)
+                     */
+                    private $nom;
+                    /**
+                     * @ORM\Column(type="string", length=255, nullable=true)
+                     */
+                    private $prenom;
+             /**
+             * @ORM\Column(type="float", nullable=true)
              */
-            private $nom;
-            /**
-             * @ORM\Column(type="string", length=255, nullable=true)
-             */
-            private $prenom;
+              private $age;
              /**
              * @ORM\Column(type="datetime", nullable=true)
              */
-              private $date;
+              private $datedenaissance;
                 public function getId(): ?int
                 {
                     return $this->id;
@@ -37,8 +42,7 @@
                         {
                             return $this->nom;
                         }
-
-
+                    
                         public function setNom(?string $nom): self
                         {
                             $this->nom = $nom;
@@ -59,14 +63,27 @@
                         }
                     
                     
-                         public function getDate(): ?\DateTimeInterface
+                         public function getAge(): ?float
                         {
-                            return $this->date;
+                            return $this->age;
                         }
                     
-                        public function setDate(?\DateTimeInterface $date): self
+                        public function setAge(?float $age): self
                         {
-                            $this->date = $date;
+                            $this->age = $age;
+                    
+                            return $this;
+                        }
+                    
+                    
+                         public function getDatedenaissance(): ?\DateTimeInterface
+                        {
+                            return $this->datedenaissance;
+                        }
+                    
+                        public function setDatedenaissance(?\DateTimeInterface $datedenaissance): self
+                        {
+                            $this->datedenaissance = $datedenaissance;
                     
                             return $this;
                         }

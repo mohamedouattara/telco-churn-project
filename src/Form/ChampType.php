@@ -16,7 +16,7 @@ class ChampType extends AbstractType
             ->add('libelleChamp')
             ->add('typeChamp', ChoiceType::class, [
                 'choices'  => [
-                    'Chaine de caractère' => 'string',
+                    'Chaine de caractères' => 'string',
                     'Date' => 'datetime',
                     'Numérique' => 'float',
                 ],

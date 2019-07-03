@@ -69,7 +69,7 @@
             if ($form->isSubmitted() && $form->isValid()) {
                 $this->getDoctrine()->getManager()->flush();
     
-                return $this->redirectToRoute('etudiant_index', [
+                return $this->redirectToRoute('dataset_index', [
                     //'id' => $etudiant->getId(),
                 ]);
             }

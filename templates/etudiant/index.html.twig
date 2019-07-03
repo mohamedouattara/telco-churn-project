@@ -4,21 +4,21 @@
                             {% block body %}
                                 <h3 style="margin-bottom: 0px;">Etudiant </h3>
                             
-                                <table class="table">
+                                <table class="table striped">
                                     <thead>
                                         <tr>
-                                        <th>Nom</th><th>Prenom</th><th>Date</th>
-                                        <th>Actions</th>
+                                        <th>Nom</th><th>Prenom</th><th>Age</th><th>Datedenaissance</th>
+                                        <!--<th>Actions</th>-->
                                         </tr>
                                     </thead>
                                     <tbody>
                                     {% for etudiant in etudiants %}
                                         <tr>
-                                        <td>{{etudiant.nom}}</td><td>{{etudiant.prenom}}</td><td>{{etudiant.date|date('d-m-Y')}}</td>
-                                            <td style="display:flex;flex-direction: column;">
+                                        <td><a href="{{ path('etudiant_show', {'id': etudiant.id}) }}">{{etudiant.nom}}</a></td><td><a href="{{ path('etudiant_show', {'id': etudiant.id}) }}">{{etudiant.prenom}}</a></td><td><a href="{{ path('etudiant_show', {'id': etudiant.id}) }}">{{etudiant.age}}</a></td><td><a href="{{ path('etudiant_show', {'id': etudiant.id}) }}">{{etudiant.datedenaissance|date('d-m-Y')}}</a></td>
+                                          {#  <td style="display:flex;flex-direction: column;">
                                                 <a href="{{ path('etudiant_show', {'id': etudiant.id}) }}"><i style="font-size:x-small;" class="material-icons tooltipped" data-position="left" data-tooltip="Show">remove_red_eye</i></a>
-                                                {#<a href="{{ path('etudiant_edit', {'id': etudiant.id}) }}"><i style="font-size:x-small;"  class="material-icons tooltipped" data-position="left" data-tooltip="Edit">build</i></a>#}
-                                            </td>
+                                               <a href="{{ path('etudiant_edit', {'id': etudiant.id}) }}"><i style="font-size:x-small;"  class="material-icons tooltipped" data-position="left" data-tooltip="Edit">build</i></a>
+                                            </td>#}
                                         </tr>
                                     {% else %}
                                         <tr>

@@ -39,12 +39,13 @@ class CRUDMaker{
             foreach ($this->fields as $field){
                 if(is_array($field['field'])){
                     $select_label = array_pop($field['field']);
-                    $tableData .= '<td>{{'.$entityName.'.'.strtolower($select_label).'}}</td>';
+                    $tableData .= '<td><a href="{{ path(\''.strtolower($this->entityName).'_show\', {\'id\': '.strtolower($this->entityName).'.id}) }}">{{'.$entityName.'.'.strtolower($select_label).'}}</a></td>';
+
                 }else{
                     if ($field['type'] != 'datetime')
-                        $tableData .= '<td>{{'.$entityName.'.'.strtolower($field['field']).'}}</td>';
+                        $tableData .= '<td><a href="{{ path(\''.strtolower($this->entityName).'_show\', {\'id\': '.strtolower($this->entityName).'.id}) }}">{{'.$entityName.'.'.strtolower($field['field']).'}}</a></td>';
                     else
-                        $tableData .= '<td>{{'.$entityName.'.'.strtolower($field['field']).'|date(\'d-m-Y\')}}</td>';
+                        $tableData .= '<td><a href="{{ path(\''.strtolower($this->entityName).'_show\', {\'id\': '.strtolower($this->entityName).'.id}) }}">{{'.$entityName.'.'.strtolower($field['field']).'|date(\'d-m-Y\')}}</a></td>';
                 }
 
 
@@ -105,21 +106,21 @@ class CRUDMaker{
                             {% block body %}
                                 <h3 style="margin-bottom: 0px;">'.$capitalizeEntityName.' </h3>
                             
-                                <table class="table">
+                                <table class="table striped">
                                     <thead>
                                         <tr>
                                         '.$this->tableElements("th").'
-                                        <th>Actions</th>
+                                        <!--<th>Actions</th>-->
                                         </tr>
                                     </thead>
                                     <tbody>
                                     {% for '.$lowercaseEntityName.' in '.$lowercaseEntityName.'s %}
                                         <tr>
                                         '.$this->tableElements("td", $lowercaseEntityName).'
-                                            <td style="display:flex;flex-direction: column;">
+                                          {#  <td style="display:flex;flex-direction: column;">
                                                 <a href="{{ path(\''.$lowercaseEntityName.'_show\', {\'id\': '.$lowercaseEntityName.'.id}) }}"><i style="font-size:x-small;" class="material-icons tooltipped" data-position="left" data-tooltip="Show">remove_red_eye</i></a>
-                                                {#<a href="{{ path(\''.$lowercaseEntityName.'_edit\', {\'id\': '.$lowercaseEntityName.'.id}) }}"><i style="font-size:x-small;"  class="material-icons tooltipped" data-position="left" data-tooltip="Edit">build</i></a>#}
-                                            </td>
+                                               <a href="{{ path(\''.$lowercaseEntityName.'_edit\', {\'id\': '.$lowercaseEntityName.'.id}) }}"><i style="font-size:x-small;"  class="material-icons tooltipped" data-position="left" data-tooltip="Edit">build</i></a>
+                                            </td>#}
                                         </tr>
                                     {% else %}
                                         <tr>

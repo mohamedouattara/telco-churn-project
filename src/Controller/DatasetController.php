@@ -144,6 +144,7 @@ class DatasetController extends AbstractController
             $entityMaker->commandCacheWarmup();
         }
 
+        sort($list_dir); //Organise les dossiers dans l'ordre croissant
 
         return $this->render('dataset/index.html.twig', [
             'datasets' => $datasetRepository->findAll(),

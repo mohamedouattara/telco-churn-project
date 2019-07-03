@@ -13,13 +13,6 @@ h1,h2,h3,h4,h5,h6{
     margin-top:auto;
 }
 
-div.dataTables_length label select{
-    height:27px;
-}
-
-select{
-    display:flex;
-}
 
 div.dataTables_filter > label:nth-child(1) > input:nth-child(1){
     height:27px;
@@ -30,7 +23,13 @@ thead{
     color:white;
 }
 
+body select{
+    display:flex;
+}
 
+.dataTables_length > label:nth-child(1) > select:nth-child(1){
+    height:27px;
+}
 .custom-container{
     #background:white;
     padding:23px;
@@ -51,17 +50,29 @@ thead{
 
 .export-delete-actions{
     position: relative;
-    bottom: 24px;
-    left: 58%;
+    top: 26px;
+    left:-144px;
+}
+
+table.dataTable{
+    font-size:x-small;
+}
+
+body table.dataTable tbody td {
+    padding: 4px 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+    padding:2px;
 }
 
 div.custom-container table.table tbody tr td a{
     border-radius: 23px;
-    background: #2f3542;
+    #background: #2f3542;
     position: relative;
     height: 23px;
     width: 10px;
-    color:white;
+    #color:white;
     padding: 0 16px;
 
     #border: none;

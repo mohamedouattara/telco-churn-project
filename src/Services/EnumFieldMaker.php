@@ -28,7 +28,7 @@ class EnumFieldMaker{
 
 
 
-    public function buildClassAttributes(){
+    public function buildClassAttributesAndMethods(){
         $my_attributes = '';
 
 
@@ -90,8 +90,6 @@ class EnumFieldMaker{
         return $my_attributes;
     }
 
-
-
     public function buildTypeEnum(){
 
         $capitalizeEntityName = ucfirst($this->entityName);
@@ -109,11 +107,7 @@ class EnumFieldMaker{
 namespace App\Form\Enums;
 
 abstract class '.$capitalizeEntityName.'TypeEnum {';
-
-$generatedTypeEnum .= $this->buildClassAttributes();
-//$generatedTypeEnum .= $this->buildClassMethods();
-
-
+$generatedTypeEnum .= $this->buildClassAttributesAndMethods();
 $generatedTypeEnum .='}';
 
         try{
