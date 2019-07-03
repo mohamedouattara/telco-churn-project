@@ -1,31 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3e8bf7c-2b89-4bf7-8b2b-36c091b85391" name="Default Changelist" comment="">
+    <list default="true" id="d3e8bf7c-2b89-4bf7-8b2b-36c091b85391" name="Default Changelist" comment="Amélioration UI de l'outil de production">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/libs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/libs/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/EtudiantController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Etudiant.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/EtudiantType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/EtudiantRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/dataset/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dataset/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/etudiant/_delete.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/etudiant/_form.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/etudiant/edit.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/etudiant/index.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/etudiant/new.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/etudiant/show.html.twig" beforeDir="false" />
-      <change beforePath="$USER_HOME$/wiassur/src/Entity/ContractSearch.php" beforeDir="false" afterPath="$USER_HOME$/wiassur/src/Entity/ContractSearch.php" afterDir="false" />
-      <change beforePath="$USER_HOME$/wiassur/src/Form/ContractSearchType.php" beforeDir="false" afterPath="$USER_HOME$/wiassur/src/Form/ContractSearchType.php" afterDir="false" />
-      <change beforePath="$USER_HOME$/wiassur/src/Repository/CustomerRepository.php" beforeDir="false" afterPath="$USER_HOME$/wiassur/src/Repository/CustomerRepository.php" afterDir="false" />
-      <change beforePath="$USER_HOME$/wiassur/templates/avenant/show.html.twig" beforeDir="false" afterPath="$USER_HOME$/wiassur/templates/avenant/show.html.twig" afterDir="false" />
-      <change beforePath="$USER_HOME$/wiassur/templates/compte/index.html.twig" beforeDir="false" afterPath="$USER_HOME$/wiassur/templates/compte/index.html.twig" afterDir="false" />
-      <change beforePath="$USER_HOME$/wiassur/templates/contrat/show.html.twig" beforeDir="false" afterPath="$USER_HOME$/wiassur/templates/contrat/show.html.twig" afterDir="false" />
-      <change beforePath="$USER_HOME$/wiassur/templates/customer/index.html.twig" beforeDir="false" afterPath="$USER_HOME$/wiassur/templates/customer/index.html.twig" afterDir="false" />
-      <change beforePath="$USER_HOME$/wiassur/templates/customer/show.html.twig" beforeDir="false" afterPath="$USER_HOME$/wiassur/templates/customer/show.html.twig" afterDir="false" />
-      <change beforePath="$USER_HOME$/wiassur/templates/production/index.html.twig" beforeDir="false" afterPath="$USER_HOME$/wiassur/templates/production/index.html.twig" afterDir="false" />
-      <change beforePath="$USER_HOME$/wiassur/templates/website.html.twig" beforeDir="false" afterPath="$USER_HOME$/wiassur/templates/website.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wiassur/src/Entity/ContractSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/src/Entity/ContractSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wiassur/src/Form/ContractSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/src/Form/ContractSearchType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wiassur/src/Repository/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/src/Repository/CustomerRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wiassur/templates/avenant/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/templates/avenant/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wiassur/templates/compte/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/templates/compte/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wiassur/templates/contrat/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/templates/contrat/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wiassur/templates/customer/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/templates/customer/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wiassur/templates/customer/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/templates/customer/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wiassur/templates/production/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/templates/production/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../wiassur/templates/website.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/templates/website.html.twig" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,28 +60,23 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+        <entry file="file://$PROJECT_DIR$/../wiassur/templates/avenant/show.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2184">
-              <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/dataset/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-780">
-              <caret line="112" selection-start-line="112" selection-end-line="112" />
+            <state relative-caret-position="197">
+              <caret line="89" column="65" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
+              <folding>
+                <element signature="e#12#26#0#Twig" expanded="true" />
+                <element signature="n#style#0;n#svg#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/libs/css/style.css">
+        <entry file="file://$PROJECT_DIR$/../wiassur/src/Form/ContractSearchType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+            <state relative-caret-position="126">
+              <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -125,19 +107,19 @@
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="SYNC" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../wiassur" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/templates/carte/show.html.twig" />
-        <option value="$USER_HOME$/wiassur/src/Erp/AvenantManager.php" />
-        <option value="$USER_HOME$/wiassur/src/Controller/AvenantController.php" />
-        <option value="$USER_HOME$/wiassur/templates/avenant/update.html.twig" />
-        <option value="$USER_HOME$/wiassur/src/Form/ActifType.php" />
-        <option value="$USER_HOME$/wiassur/templates/website/about.html.twig" />
-        <option value="$USER_HOME$/wiassur/src/Controller/WebsiteController.php" />
-        <option value="$USER_HOME$/wiassur/templates/website/partners.html.twig" />
+        <option value="$PROJECT_DIR$/../wiassur/src/Erp/AvenantManager.php" />
+        <option value="$PROJECT_DIR$/../wiassur/src/Controller/AvenantController.php" />
+        <option value="$PROJECT_DIR$/../wiassur/templates/avenant/update.html.twig" />
+        <option value="$PROJECT_DIR$/../wiassur/src/Form/ActifType.php" />
+        <option value="$PROJECT_DIR$/../wiassur/templates/website/about.html.twig" />
+        <option value="$PROJECT_DIR$/../wiassur/src/Controller/WebsiteController.php" />
+        <option value="$PROJECT_DIR$/../wiassur/templates/website/partners.html.twig" />
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
         <option value="$PROJECT_DIR$/vendor/symfony/maker-bundle/src/Maker/MakeCrud.php" />
         <option value="$PROJECT_DIR$/templates/eleve/show.html.twig" />
@@ -166,21 +148,21 @@
         <option value="$PROJECT_DIR$/src/Services/FormMaker.php" />
         <option value="$PROJECT_DIR$/src/Controller/DatasetController.php" />
         <option value="$PROJECT_DIR$/src/Form/ChampType.php" />
-        <option value="$USER_HOME$/wiassur/templates/contrat/show.html.twig" />
-        <option value="$USER_HOME$/wiassur/src/Form/ContractSearchType.php" />
-        <option value="$USER_HOME$/wiassur/src/Repository/CustomerRepository.php" />
-        <option value="$USER_HOME$/wiassur/templates/base.html.twig" />
-        <option value="$USER_HOME$/wiassur/templates/website.html.twig" />
-        <option value="$USER_HOME$/wiassur/src/Entity/ContractSearch.php" />
-        <option value="$USER_HOME$/wiassur/templates/avenant/show.html.twig" />
-        <option value="$USER_HOME$/wiassur/templates/compte/index.html.twig" />
-        <option value="$USER_HOME$/wiassur/templates/customer/index.html.twig" />
-        <option value="$USER_HOME$/wiassur/templates/production/index.html.twig" />
+        <option value="$PROJECT_DIR$/../wiassur/templates/contrat/show.html.twig" />
+        <option value="$PROJECT_DIR$/../wiassur/src/Repository/CustomerRepository.php" />
+        <option value="$PROJECT_DIR$/../wiassur/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/../wiassur/templates/website.html.twig" />
+        <option value="$PROJECT_DIR$/../wiassur/src/Entity/ContractSearch.php" />
+        <option value="$PROJECT_DIR$/../wiassur/templates/avenant/show.html.twig" />
+        <option value="$PROJECT_DIR$/../wiassur/templates/compte/index.html.twig" />
+        <option value="$PROJECT_DIR$/../wiassur/templates/customer/index.html.twig" />
+        <option value="$PROJECT_DIR$/../wiassur/templates/production/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Services/CRUDMaker.php" />
-        <option value="$USER_HOME$/wiassur/templates/customer/show.html.twig" />
+        <option value="$PROJECT_DIR$/../wiassur/templates/customer/show.html.twig" />
         <option value="$PROJECT_DIR$/templates/dataset/index.html.twig" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/public/libs/css/style.css" />
+        <option value="$PROJECT_DIR$/../wiassur/src/Form/ContractSearchType.php" />
       </list>
     </option>
   </component>
@@ -342,23 +324,7 @@
           <expand>
             <path>
               <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/telco-churn-project" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/telco-churn-project" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/telco-churn-project" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="var" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/telco-churn-project" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="var" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="log" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="~/wiassur" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
           </expand>
           <select />
@@ -368,10 +334,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ChangesTree.GroupingKeys" value="directory" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/wiassur/public/images/partners" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wiassur/public/images/partners" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -386,7 +353,7 @@
       <recent name="$PROJECT_DIR$/resources/test" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$USER_HOME$/wiassur/public/images/partners" />
+      <recent name="$PROJECT_DIR$/../wiassur/public/images/partners" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -448,12 +415,12 @@
       <workItem from="1562108944341" duration="4911000" />
       <workItem from="1562152457974" duration="401000" />
       <workItem from="1562169527921" duration="6368000" />
-      <workItem from="1562186643883" duration="1035000" />
+      <workItem from="1562186643883" duration="2243000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="265676000" />
+    <option name="totallyTimeSpent" value="266884000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -468,9 +435,10 @@
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1901603" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1901603" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.3299285" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3278856" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32925585" />
@@ -528,6 +496,10 @@
         <option value="1" />
       </list>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Amélioration UI de l'outil de production" />
+    <option name="LAST_COMMIT_MESSAGE" value="Amélioration UI de l'outil de production" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/templates/etudiant/_form.html.twig" />
@@ -690,84 +662,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/wiassur/src/Entity/Customer.php">
+    <entry file="file://$PROJECT_DIR$/../wiassur/src/Entity/Customer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/wiassur/src/Form/ContractSearchType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="82" column="11" lean-forward="true" selection-start-line="82" selection-start-column="11" selection-end-line="82" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/wiassur/src/Controller/ProductionController.php">
+    <entry file="file://$PROJECT_DIR$/../wiassur/src/Controller/ProductionController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
           <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/wiassur/src/Repository/CustomerRepository.php">
+    <entry file="file://$PROJECT_DIR$/../wiassur/src/Repository/CustomerRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1281">
           <caret line="65" column="29" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/wiassur/templates/avenant/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2898">
-          <caret line="138" column="28" selection-start-line="138" selection-start-column="28" selection-end-line="138" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/wiassur/templates/compte/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/../wiassur/templates/compte/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1554">
           <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/wiassur/templates/customer/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/../wiassur/templates/customer/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2289">
           <caret line="109" column="31" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/wiassur/src/Entity/ContractSearch.php">
+    <entry file="file://$PROJECT_DIR$/../wiassur/src/Entity/ContractSearch.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/wiassur/templates/base.html.twig">
+    <entry file="file://$PROJECT_DIR$/../wiassur/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3297">
           <caret line="157" selection-start-line="157" selection-end-line="157" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/wiassur/templates/website.html.twig">
+    <entry file="file://$PROJECT_DIR$/../wiassur/templates/website.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="903">
           <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/wiassur/src/Repository/ContratRepository.php">
+    <entry file="file://$PROJECT_DIR$/../wiassur/src/Repository/ContratRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/wiassur/templates/production/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/../wiassur/templates/production/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1354">
           <caret line="99" column="46" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
@@ -795,7 +753,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/wiassur/templates/contrat/show.html.twig">
+    <entry file="file://$PROJECT_DIR$/../wiassur/templates/contrat/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="209" column="39" selection-start-line="209" selection-start-column="39" selection-end-line="209" selection-end-column="39" />
@@ -806,7 +764,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/wiassur/templates/customer/show.html.twig">
+    <entry file="file://$PROJECT_DIR$/../wiassur/templates/customer/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-777">
           <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
@@ -817,13 +775,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dataset/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-780">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2184">
@@ -831,10 +782,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dataset/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-766">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/libs/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
+        <state relative-caret-position="210">
+          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../wiassur/templates/avenant/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="89" column="65" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="n#style#0;n#svg#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../wiassur/src/Form/ContractSearchType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="24" />
         </state>
       </provider>
     </entry>
