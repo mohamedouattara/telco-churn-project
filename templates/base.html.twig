@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="{{ asset('libs/css/style.css') }}">
         <script src="{{ asset('libs/js/3.4.1_jquery.min.js') }}"></script>
         <script src="{{ asset('libs/js/sweetalert2.min.js') }}"></script>
+        <script src="{{ asset('libs/js/1.10.19_.dataTables.min.js') }}"></script>
 
     </head>
 
@@ -87,32 +88,32 @@
     </div>
 
         {% block javascripts %}{% endblock %}
-    <script src="{{ asset('libs/js/1.10.19_.dataTables.min.js') }}"></script>
+
     <script src="{{ asset('libs/js/1.0.0_materialize.min.js') }}"></script>
 
-
-        <script>
+    <script>
             $(function(){
 
-
-                function fils(){
-                    alert('btn fils');
-                }
+                $('table.table').DataTable(
+                                   {
+                        "lengthMenu": [
+                            //[3,5,10, 25, 50, -1], //Values
+                            [5], //Values
+                            [5] //Labels
+                            //[3, 5, 10, 25, 50, "All"] //Labels
+                        ],
+                       //"bLengthChange": false
+                    }
+                );
 
                 //$('.sidenav').sidenav();
                 $(".dropdown-trigger").dropdown();
                 $('.tooltipped').tooltip();
                 $('.fixed-action-btn').floatingActionButton();
+                /*$('select').formSelect();*/
                 //$('.datepicker').datepicker();
 
-                $('div.container-fluid table.table').DataTable(
-                    {
-                        "lengthMenu": [
-                            [3,5,10, 25, 50, -1], //Values
-                            [3, 5, 10, 25, 50, "All"] //Labels
-                        ]
-                    }
-                );
+
 
 
             });

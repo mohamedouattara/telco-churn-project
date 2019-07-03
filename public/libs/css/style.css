@@ -14,6 +14,14 @@ h1,h2,h3,h4,h5,h6{
 }
 
 
+/*.dataTables_length > label:nth-child(1) > select:nth-child(1){
+    #height:27px;
+    display:none;
+}*/
+.dataTables_length > label:nth-child(1){
+    display:none;
+}
+
 div.dataTables_filter > label:nth-child(1) > input:nth-child(1){
     height:27px;
 }
@@ -27,9 +35,6 @@ body select{
     display:flex;
 }
 
-.dataTables_length > label:nth-child(1) > select:nth-child(1){
-    height:27px;
-}
 .custom-container{
     #background:white;
     padding:23px;
