@@ -54,31 +54,26 @@ class CRUDMaker{
         }elseif($entityName != '' and $isShowed == true){
 
             foreach ($this->fields as $field){
-                $temp = '';
-                if(is_array($field['field'])){
-                    $select_label = array_pop($field['field']);
-                    $temp = '{{'.$entityName.'.'.strtolower($select_label).'}}';
-                }else{
+                $headertemp = "";
+                    $temp = '';
+                    if(is_array($field['field'])){
+                        $headertemp = array_pop($field['field']);
+                        $temp = '{{'.$entityName.'.'.strtolower($headertemp).'}}';
 
-                    if ($field['type'] != 'datetime')
+                    }elseif($field['type'] != 'datetime'){
+                        $headertemp = ucfirst($field['field']);
                         $temp = '{{'.$entityName.'.'.strtolower($field['field']).'}}';
-                    else
+
+                    }else{
+                        $headertemp = ucfirst($field['field']);
                         $temp = '{{'.$entityName.'.'.strtolower($field['field']).'|date(\'d-m-Y\')}}';
-                }
+                    }
 
-                if(is_array($field['field']))
-                {
-                   $headertemp = ucfirst(array_pop($field['field']));
-                }else{
-                    $headertemp = ucfirst($field['field']);
-                }
-
-
-                $presentationData .= '<tr>
-                                        <th>'.$headertemp.'</th>
-                                        <td>'.$temp.'</td>
-                                    </tr>
-                                    ';
+                    $presentationData .= '<tr>
+                                            <th>'.$headertemp.'</th>
+                                            <td>'.$temp.'</td>
+                                        </tr>
+                                        ';
             }
             return $presentationData;
         }

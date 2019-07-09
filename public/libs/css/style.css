@@ -13,6 +13,33 @@ h1,h2,h3,h4,h5,h6{
     margin-top:auto;
 }
 
+/*Changement des couleurs on focus des inputs form*/
+input:not([type]):focus:not([readonly]), input[type="text"]:not(.browser-default):focus:not([readonly]), input[type="password"]:not(.browser-default):focus:not([readonly]), input[type="email"]:not(.browser-default):focus:not([readonly]), input[type="url"]:not(.browser-default):focus:not([readonly]), input[type="time"]:not(.browser-default):focus:not([readonly]), input[type="date"]:not(.browser-default):focus:not([readonly]), input[type="datetime"]:not(.browser-default):focus:not([readonly]), input[type="datetime-local"]:not(.browser-default):focus:not([readonly]), input[type="tel"]:not(.browser-default):focus:not([readonly]), input[type="number"]:not(.browser-default):focus:not([readonly]), input[type="search"]:not(.browser-default):focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]), select:not(.prevent-default):focus:not([readonly])
+{
+    border-bottom: 1px solid #0bf;
+    -webkit-box-shadow: 0 1px 0 0 #0bf;
+    box-shadow: 0 1px 0 0 #0bf;
+}
+
+.datepicker-date-display, .is-selected > button:nth-child(1){
+    background-color:#3498db;
+}
+
+.datepicker-cancel, .datepicker-clear, .datepicker-today, .datepicker-done{
+    color:#3498db;
+}
+
+.orig-select-month, .orig-select-year{
+    display:none;
+}
+
+a.btn:hover{
+    background:#3498db;
+}
+/*Retrait de champs sur generateur*/
+.example-wrapper > form:nth-child(1) > div:nth-child(3) > label:nth-child(1){
+    display:none;
+}
 
 /*.dataTables_length > label:nth-child(1) > select:nth-child(1){
     #height:27px;
@@ -60,7 +87,12 @@ body select{
 }
 
 table.dataTable{
-    font-size:x-small;
+    font-size:small;
+    text-transform: uppercase;
+}
+
+.dataTables_paginate.paging_simple_numbers{
+    display:none;
 }
 
 body table.dataTable tbody td {

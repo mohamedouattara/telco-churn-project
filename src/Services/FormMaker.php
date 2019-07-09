@@ -28,7 +28,11 @@ class FormMaker{
         foreach ($this->fields as $field){
             if($field['type'] == 'datetime'){
 
-                $myfunction .= '->add(\''.ucfirst($field["field"]).'\', DateType::class, [\'widget\' => \'single_text\',])';
+                $myfunction .= '->add(\''.ucfirst($field["field"]).'\', DateType::class, [
+                \'widget\' => \'single_text\', 
+                \'attr\' => [\'class\' => \'js-datepicker\'],
+                \'html5\' => false,
+                ])';
             }elseif($field['type'] == 'float'){
                 $myfunction .= '->add(\''.ucfirst($field["field"]).'\', NumberType::class)';
             }elseif($field['type'] == 'string'){

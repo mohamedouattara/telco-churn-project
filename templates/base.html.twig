@@ -13,13 +13,16 @@
         <!-- Compiled and minified JavaScript -->
 
         <link href="{{ asset('libs/css/material-icons/icon.css') }}" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('libs/css/sweetalert2.min.css') }}">
+        {#<link rel="stylesheet" href="{{ asset('libs/css/sweetalert2.min.css') }}">#}
         <link rel="stylesheet" href="{{ asset('libs/css/dataTables.min.css') }}">
+        {#<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">#}
         <link rel="stylesheet" href="{{ asset('libs/css/materialize.min.css') }}">
         <link rel="stylesheet" href="{{ asset('libs/css/style.css') }}">
         <script src="{{ asset('libs/js/3.4.1_jquery.min.js') }}"></script>
-        <script src="{{ asset('libs/js/sweetalert2.min.js') }}"></script>
+        {#<script src="{{ asset('libs/js/sweetalert2.min.js') }}"></script>#}
+{#        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>#}
         <script src="{{ asset('libs/js/1.10.19_.dataTables.min.js') }}"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
 
     </head>
 
@@ -90,19 +93,20 @@
         {% block javascripts %}{% endblock %}
 
     <script src="{{ asset('libs/js/1.0.0_materialize.min.js') }}"></script>
+    <script src="https//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
 
     <script>
-            $(function(){
+            $(function() {
 
                 $('table.table').DataTable(
-                                   {
+                    {
                         "lengthMenu": [
                             //[3,5,10, 25, 50, -1], //Values
                             [5], //Values
                             [5] //Labels
                             //[3, 5, 10, 25, 50, "All"] //Labels
                         ],
-                       //"bLengthChange": false
+                        //"bLengthChange": false
                     }
                 );
 
@@ -110,13 +114,15 @@
                 $(".dropdown-trigger").dropdown();
                 $('.tooltipped').tooltip();
                 $('.fixed-action-btn').floatingActionButton();
+
+                $('.js-datepicker').datepicker({
+                    format: 'yyyy-mm-dd',
+                });
                 /*$('select').formSelect();*/
-                //$('.datepicker').datepicker();
-
-
-
+                // $('.datepicker').datepicker();
 
             });
+
         </script>
     </body>
 

@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3e8bf7c-2b89-4bf7-8b2b-36c091b85391" name="Default Changelist" comment="Amélioration UI de l'outil de production">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/96e8a632-9823-4830-98ce-3ab336dc1403.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/96e8a632-9823-4830-98ce-3ab336dc1403.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wiassur/src/Entity/ContractSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/src/Entity/ContractSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wiassur/src/Form/ContractSearchType.php" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/src/Form/ContractSearchType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wiassur/src/Repository/CustomerRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/src/Repository/CustomerRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wiassur/templates/avenant/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/templates/avenant/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wiassur/templates/compte/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/templates/compte/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wiassur/templates/contrat/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/templates/contrat/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wiassur/templates/customer/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/templates/customer/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wiassur/templates/customer/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/templates/customer/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wiassur/templates/production/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/templates/production/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../wiassur/templates/website.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/../wiassur/templates/website.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/libs/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/libs/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TableRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TroRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TroyRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/TrusRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UubhjRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/VehiculeRepository.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/CRUDMaker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/CRUDMaker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/FormMaker.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/FormMaker.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,23 +61,85 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../wiassur/templates/avenant/show.html.twig">
+        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
-              <caret line="89" column="65" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
-              <folding>
-                <element signature="e#12#26#0#Twig" expanded="true" />
-                <element signature="n#style#0;n#svg#0;n#a#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="543">
+              <caret line="118" column="41" selection-start-line="118" selection-start-column="41" selection-end-line="118" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../wiassur/src/Form/ContractSearchType.php">
+        <entry file="file://$PROJECT_DIR$/public/libs/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="93" column="43" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Services/CRUDMaker.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="31" column="54" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Services/FormMaker.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="693">
+              <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Form/TableType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/wiassur/src/Form/CustomerSearchType.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
-              <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="24" />
+              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/DatasetController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2646">
+              <caret line="147" selection-start-line="147" selection-end-line="147" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Form/ChampType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+              <folding>
+                <element signature="e#28#49#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -103,23 +166,29 @@
       <find>police</find>
       <find>deleteBtn</find>
       <find>striped</find>
+      <find>cliquez</find>
+      <find>revenir</find>
+      <find>preprod</find>
+      <find>comparer</find>
+      <find>nous</find>
+      <find>margin-top</find>
+      <find>promesse</find>
+      <find>87px</find>
+      <find>sect</find>
+      <find>phone-mocku</find>
+      <find>font</find>
     </findStrings>
+    <dirStrings>
+      <dir>$USER_HOME$/wiassur/public/images/resources</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="SYNC" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../wiassur" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/carte/show.html.twig" />
-        <option value="$PROJECT_DIR$/../wiassur/src/Erp/AvenantManager.php" />
-        <option value="$PROJECT_DIR$/../wiassur/src/Controller/AvenantController.php" />
-        <option value="$PROJECT_DIR$/../wiassur/templates/avenant/update.html.twig" />
-        <option value="$PROJECT_DIR$/../wiassur/src/Form/ActifType.php" />
-        <option value="$PROJECT_DIR$/../wiassur/templates/website/about.html.twig" />
-        <option value="$PROJECT_DIR$/../wiassur/src/Controller/WebsiteController.php" />
-        <option value="$PROJECT_DIR$/../wiassur/templates/website/partners.html.twig" />
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
         <option value="$PROJECT_DIR$/vendor/symfony/maker-bundle/src/Maker/MakeCrud.php" />
         <option value="$PROJECT_DIR$/templates/eleve/show.html.twig" />
@@ -145,24 +214,32 @@
         <option value="$PROJECT_DIR$/public/libs/css/material-icons/icon.css" />
         <option value="$PROJECT_DIR$/src/Form/Enums/MessageTypeEnum.php" />
         <option value="$PROJECT_DIR$/src/Services/EnumFieldMaker.php" />
-        <option value="$PROJECT_DIR$/src/Services/FormMaker.php" />
         <option value="$PROJECT_DIR$/src/Controller/DatasetController.php" />
         <option value="$PROJECT_DIR$/src/Form/ChampType.php" />
-        <option value="$PROJECT_DIR$/../wiassur/templates/contrat/show.html.twig" />
-        <option value="$PROJECT_DIR$/../wiassur/src/Repository/CustomerRepository.php" />
-        <option value="$PROJECT_DIR$/../wiassur/templates/base.html.twig" />
-        <option value="$PROJECT_DIR$/../wiassur/templates/website.html.twig" />
-        <option value="$PROJECT_DIR$/../wiassur/src/Entity/ContractSearch.php" />
-        <option value="$PROJECT_DIR$/../wiassur/templates/avenant/show.html.twig" />
-        <option value="$PROJECT_DIR$/../wiassur/templates/compte/index.html.twig" />
-        <option value="$PROJECT_DIR$/../wiassur/templates/customer/index.html.twig" />
-        <option value="$PROJECT_DIR$/../wiassur/templates/production/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Services/CRUDMaker.php" />
-        <option value="$PROJECT_DIR$/../wiassur/templates/customer/show.html.twig" />
+        <option value="$USER_HOME$/wiassur/templates/contrat/show.html.twig" />
+        <option value="$USER_HOME$/wiassur/src/Repository/CustomerRepository.php" />
+        <option value="$USER_HOME$/wiassur/templates/base.html.twig" />
+        <option value="$USER_HOME$/wiassur/templates/website.html.twig" />
+        <option value="$USER_HOME$/wiassur/src/Entity/ContractSearch.php" />
+        <option value="$USER_HOME$/wiassur/templates/avenant/show.html.twig" />
+        <option value="$USER_HOME$/wiassur/templates/compte/index.html.twig" />
+        <option value="$USER_HOME$/wiassur/templates/customer/index.html.twig" />
+        <option value="$USER_HOME$/wiassur/templates/production/index.html.twig" />
+        <option value="$USER_HOME$/wiassur/templates/customer/show.html.twig" />
         <option value="$PROJECT_DIR$/templates/dataset/index.html.twig" />
+        <option value="$USER_HOME$/wiassur/src/Form/ContractSearchType.php" />
+        <option value="$USER_HOME$/wiassur/templates/website/partners.html.twig" />
+        <option value="$USER_HOME$/wiassur/templates/website/menu.html.twig" />
+        <option value="$USER_HOME$/wiassur/templates/website/footer.html.twig" />
+        <option value="$USER_HOME$/wiassur/templates/website/index.html.twig" />
+        <option value="$USER_HOME$/wiassur/public/css/website.css" />
+        <option value="$PROJECT_DIR$/src/Form/MatableType.php" />
+        <option value="$PROJECT_DIR$/src/Form/Test1Type.php" />
+        <option value="$PROJECT_DIR$/src/Form/TableType.php" />
+        <option value="$PROJECT_DIR$/src/Services/CRUDMaker.php" />
+        <option value="$PROJECT_DIR$/src/Services/FormMaker.php" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
         <option value="$PROJECT_DIR$/public/libs/css/style.css" />
-        <option value="$PROJECT_DIR$/../wiassur/src/Form/ContractSearchType.php" />
       </list>
     </option>
   </component>
@@ -297,14 +374,14 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
+    <option name="x" value="1013" />
+    <option name="y" value="72" />
     <option name="width" value="893" />
-    <option name="height" value="944" />
+    <option name="height" value="926" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="Scope" currentSubView="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
@@ -314,6 +391,23 @@
             <path>
               <item name="telco-churn-project" type="b2602c69:ProjectViewProjectNode" />
               <item name="telco-churn-project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="telco-churn-project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="telco-churn-project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="telco-churn-project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -325,6 +419,53 @@
             <path>
               <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="~/wiassur" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/wiassur" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/wiassur" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="images" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/wiassur" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="images" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/wiassur" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/wiassur" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="js" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="production" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/wiassur" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/wiassur" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="telco-churn-project" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/wiassur" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="templates" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="website" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -338,22 +479,26 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wiassur/public/images/partners" />
+    <property name="last_opened_file_path" value="$USER_HOME$/wiassur/public/images/resources" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Twig" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$USER_HOME$/wiassur/public/images/resources" />
+      <recent name="$USER_HOME$/wiassur/public/css" />
+      <recent name="$USER_HOME$/wiassur/public/js" />
+      <recent name="$USER_HOME$/wiassur/public/images" />
+      <recent name="$USER_HOME$/wiassur/public/images/social" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/Eleve" />
       <recent name="$PROJECT_DIR$/src/Repository" />
       <recent name="$PROJECT_DIR$/src/Entity" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/resources/test" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../wiassur/public/images/partners" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -416,11 +561,15 @@
       <workItem from="1562152457974" duration="401000" />
       <workItem from="1562169527921" duration="6368000" />
       <workItem from="1562186643883" duration="2243000" />
+      <workItem from="1562234199654" duration="44143000" />
+      <workItem from="1562312383723" duration="11837000" />
+      <workItem from="1562503420891" duration="2801000" />
+      <workItem from="1562622818766" duration="3165000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266884000" />
+    <option name="totallyTimeSpent" value="328834000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -435,10 +584,34 @@
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1901603" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19900498" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.3299285" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info active="true" anchor="bottom" id="Find" order="1" visible="true" weight="0.3278856" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32925585" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32925585" />
+      <window_info anchor="bottom" id="Database Console" order="7" weight="0.3292683" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32925585" />
+      <window_info anchor="bottom" id="Database Changes" order="10" weight="0.32925585" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4991708" weight="0.22778346" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50082916" side_tool="true" weight="0.45811242" />
+      <window_info anchor="bottom" id="REST Client" order="13" weight="0.32925585" />
+      <window_info active="true" anchor="bottom" id="Messages" order="14" visible="true" weight="0.3299285" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" sideWeight="0.49949032" visible="true" weight="0.20232172" />
+      <window_info anchor="right" x="0" y="0" width="413" height="884" id="Documentation" order="4" sideWeight="0.5005097" side_tool="true" weight="0.20619127" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19237147" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.3278856" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32925585" />
@@ -453,30 +626,7 @@
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4991708" weight="0.22778346" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50082916" side_tool="true" weight="0.45811242" />
       <window_info anchor="bottom" id="REST Client" order="13" weight="0.32925585" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" sideWeight="0.49949032" visible="true" weight="0.20232172" />
-      <window_info anchor="right" x="0" y="0" width="413" height="884" id="Documentation" order="4" sideWeight="0.5005097" side_tool="true" weight="0.20619127" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22111663" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3282365" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32925585" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32925585" />
-      <window_info anchor="bottom" id="Database Console" order="7" weight="0.3292683" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32925585" />
-      <window_info anchor="bottom" id="Database Changes" order="10" weight="0.32925585" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4991708" visible="true" weight="0.28498468" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50082916" side_tool="true" weight="0.45863125" />
-      <window_info anchor="bottom" id="REST Client" order="13" weight="0.32925585" />
+      <window_info active="true" anchor="bottom" id="Messages" order="14" visible="true" weight="0.3299285" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -502,230 +652,63 @@
     <option name="LAST_COMMIT_MESSAGE" value="Amélioration UI de l'outil de production" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/etudiant/_form.html.twig" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/TestController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="60" column="33" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
-          <folding>
-            <element signature="e#34#57#0#PHP" expanded="true" />
-            <element signature="e#2394#2409#1#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Etudiant.php" />
-    <entry file="file://$PROJECT_DIR$/src/Entity/Message.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" selection-start-line="3" selection-end-line="4" selection-end-column="32" />
-          <folding>
-            <element signature="e#29#64#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/VoitureType.php" />
-    <entry file="file://$PROJECT_DIR$/src/Form/EnumsVoitureaTypeEnum.php" />
-    <entry file="file://$PROJECT_DIR$/templates/voiturea/index.html.twig" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/VoitureaController.php" />
-    <entry file="file://$PROJECT_DIR$/src/Services/ControllerMaker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="99" column="55" selection-start-line="99" selection-start-column="55" selection-end-line="99" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/Enums/VoitureaTypeEnum.php" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/GeneratorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="92" column="36" selection-start-line="92" selection-start-column="36" selection-end-line="92" selection-end-column="36" />
-          <folding>
-            <element signature="e#34#55#0#PHP" expanded="true" />
-            <element signature="e#757#819#0#PHP" />
-            <element signature="e#824#1114#0#PHP" />
-            <element signature="e#1119#1176#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/Enums/VehicullleTypeEnum.php" />
-    <entry file="file://$PROJECT_DIR$/src/Services/EntityMaker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="325" column="96" selection-start-line="325" selection-start-column="96" selection-end-line="325" selection-end-column="96" />
-          <folding>
-            <element signature="e#85#140#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/PersonneController.php" />
-    <entry file="file://$PROJECT_DIR$/src/Form/Enums/PersonneTypeEnum.php" />
-    <entry file="file://$PROJECT_DIR$/src/Form/Enums/MamiTypeEnum.php" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/TroyController.php" />
-    <entry file="file://$PROJECT_DIR$/src/Form/Enums/TroyTypeEnum.php" />
-    <entry file="file://$PROJECT_DIR$/public/libs/css/dataTables.min.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/libs/css/material-icons/icon.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/test/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/var/cache/dev/srcApp_KernelDevDebugContainer.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10689">
-          <caret line="509" column="4" selection-start-line="509" selection-start-column="4" selection-end-line="509" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Services/EnumFieldMaker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1911">
-          <caret line="91" selection-start-line="91" selection-end-line="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_7.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7455">
-          <caret line="355" column="9" selection-start-line="355" selection-start-column="9" selection-end-line="355" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/Enums/MessageTypeEnum.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" selection-start-line="10" selection-start-column="3" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/MessageType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding>
-            <element signature="e#28#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/DatasetController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="135" column="83" selection-start-line="135" selection-start-column="83" selection-end-line="135" selection-end-column="83" />
-          <folding>
-            <element signature="e#1122#3553#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Services/FormMaker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-861">
-          <caret line="39" column="96" selection-start-line="39" selection-start-column="96" selection-end-line="39" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Champ.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/ChampType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding>
-            <element signature="e#28#49#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/src/Entity/Customer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/src/Controller/ProductionController.php">
+    <entry file="file://$USER_HOME$/wiassur/src/Controller/ProductionController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
           <caret line="45" column="24" selection-start-line="45" selection-start-column="24" selection-end-line="45" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/src/Repository/CustomerRepository.php">
+    <entry file="file://$USER_HOME$/wiassur/src/Repository/CustomerRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1281">
           <caret line="65" column="29" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/templates/compte/index.html.twig">
+    <entry file="file://$USER_HOME$/wiassur/templates/compte/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1554">
           <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/templates/customer/index.html.twig">
+    <entry file="file://$USER_HOME$/wiassur/templates/customer/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2289">
           <caret line="109" column="31" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/src/Entity/ContractSearch.php">
+    <entry file="file://$USER_HOME$/wiassur/src/Entity/ContractSearch.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/templates/base.html.twig">
+    <entry file="file://$USER_HOME$/wiassur/templates/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3297">
           <caret line="157" selection-start-line="157" selection-end-line="157" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/templates/website.html.twig">
+    <entry file="file://$USER_HOME$/wiassur/templates/website.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="903">
           <caret line="43" column="7" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/src/Repository/ContratRepository.php">
+    <entry file="file://$USER_HOME$/wiassur/src/Repository/ContratRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/templates/production/index.html.twig">
+    <entry file="file://$USER_HOME$/wiassur/templates/production/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1354">
           <caret line="99" column="46" selection-start-line="99" selection-start-column="46" selection-end-line="99" selection-end-column="46" />
@@ -746,14 +729,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Services/CRUDMaker.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="872">
-          <caret line="120" column="247" selection-start-line="120" selection-start-column="195" selection-end-line="120" selection-end-column="247" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/templates/contrat/show.html.twig">
+    <entry file="file://$USER_HOME$/wiassur/templates/contrat/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="209" column="39" selection-start-line="209" selection-start-column="39" selection-end-line="209" selection-end-column="39" />
@@ -764,7 +740,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/templates/customer/show.html.twig">
+    <entry file="file://$USER_HOME$/wiassur/templates/customer/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-777">
           <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
@@ -775,13 +751,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2184">
-          <caret line="104" column="25" selection-start-line="104" selection-start-column="25" selection-end-line="104" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/dataset/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-766">
@@ -789,14 +758,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/libs/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="42" selection-start-line="10" selection-start-column="42" selection-end-line="10" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/templates/avenant/show.html.twig">
+    <entry file="file://$USER_HOME$/wiassur/templates/avenant/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="89" column="65" selection-start-line="89" selection-start-column="65" selection-end-line="89" selection-end-column="65" />
@@ -807,10 +769,222 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../wiassur/src/Form/ContractSearchType.php">
+    <entry file="file://$USER_HOME$/wiassur/src/Controller/ContratController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/public/images/wiassur_logo_serre.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/public/images/data-viewer.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/public/images/logo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/templates/svg/wiassur-monochrome.svg" />
+    <entry file="file://$USER_HOME$/wiassur/templates/svg/w.svg.twig">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/public/images/social/fb.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/src/Controller/WebsiteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="24" />
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/templates/website/partners.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="238" column="44" selection-start-line="238" selection-start-column="44" selection-end-line="238" selection-end-column="44" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#9843#9858#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/public/css/fullpage.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/public/js/fullpage.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/templates/website/presse.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/templates/website/about.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-30">
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/templates/website/about-2.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="189" column="18" selection-start-line="189" selection-start-column="18" selection-end-line="189" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/templates/website/idea.svg.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-394" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/public/images/partners/app-store.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/templates/website/menu.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/templates/website/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="405" column="62" selection-start-line="405" selection-start-column="62" selection-end-line="405" selection-end-column="62" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+            <element signature="e#782#804#0#Twig" expanded="true" />
+            <element signature="e#12557#12581#0#Twig" expanded="true" />
+            <element signature="e#16180#16204#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/public/css/website.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="923" column="28" selection-start-line="923" selection-start-column="28" selection-end-line="923" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/templates/website/footer.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="599">
+          <caret line="197" column="56" selection-start-line="197" selection-start-column="56" selection-end-line="197" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/MatableType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/Test1Type.php" />
+    <entry file="file://$PROJECT_DIR$/src/Repository/TableRepository.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/TableController.php" />
+    <entry file="file://$USER_HOME$/wiassur/src/Form/ContractSearchType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-380">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="e#28#50#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://96e8a632-9823-4830-98ce-3ab336dc1403/schema/telco-churn-db/table/matable">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="6b6c8131-48e7-4ce7-82a8-008a039f586d">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="118" column="41" selection-start-line="118" selection-start-column="41" selection-end-line="118" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/FormMaker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/wiassur/src/Form/CustomerSearchType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/DatasetController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2646">
+          <caret line="147" selection-start-line="147" selection-end-line="147" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/ChampType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="e#28#49#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Services/CRUDMaker.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="31" column="54" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/TableType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/libs/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="93" column="43" selection-start-line="93" selection-start-column="43" selection-end-line="93" selection-end-column="43" />
         </state>
       </provider>
     </entry>
