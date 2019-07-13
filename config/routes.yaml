@@ -4,3 +4,13 @@
 app_logout:
     path: /logout
     methods: GET
+
+my_login:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::redirectAction
+    defaults:
+        route: dataset_index
+        # make a permanent redirection...
+        permanent: false
+        # ...and keep the original query string parameters
+        keepQueryParams: false

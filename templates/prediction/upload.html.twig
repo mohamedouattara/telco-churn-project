@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Prediction upload!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css" />
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Upload</h1>
+
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
+
+    <script>
+        $(function(){
+            // jQuery
+            // Dropzone class:
+            //$('form').attr('class', 'dz-clickable dropzone');
+           // $('#document_name').parent().hide();
+
+            $('#document_submit').attr('class','btn').css({
+                "position":'relative',
+                "top":"155px",
+                "right":"22px",
+
+            });
+            Dropzone.autoDiscover = false
+            //var myDropzone = new Dropzone("form", { url: "/file/post"});
+
+        });
+    </script>
+{% endblock %}

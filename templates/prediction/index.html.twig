@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Prediction index!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css" />
+{% endblock %}
+
+{% block body %}
+<div>
+    <div class="dropzone my-dropzone" id="form_snippet_image" action="{{path('prediction_upload')}}">
+    </div>
+</div>
+{% endblock %}
+
+
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
+
+    <script>
+        $(function(){
+            //je récupère l'action où sera traité l'upload en PHP
+            var _actionToDropZone = $("#form_snippet_image").attr('action');
+
+            //je définis ma zone de drop grâce à l'ID de ma div citée plus haut.
+            Dropzone.autoDiscover = false;
+            var myDropzone = new Dropzone("#form_snippet_image", { url: _actionToDropZone });
+
+
+        });
+    </script>
+{% endblock %}

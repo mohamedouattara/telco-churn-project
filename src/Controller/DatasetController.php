@@ -133,7 +133,17 @@ class DatasetController extends AbstractController
         if($handle = opendir('../templates')){
 
             while(false !== ($entry = readdir($handle))){
-                if ($entry != "." and $entry != ".." and $entry != "base.html.twig" and $entry != "security" and $entry != "dataset" and $entry != "test" and $entry != 'generator'){
+                if (
+                    $entry != "." and
+                    $entry != ".." and
+                    $entry != "base.html.twig" and
+                    $entry != "security" and
+                    $entry != "dataset" and
+                    $entry != "test" and
+                    $entry != "prediction" and
+                    $entry != "__prediction" and
+                    $entry != 'generator'
+                ){
                     array_push($list_dir, $entry);
                 }
             }

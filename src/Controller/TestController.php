@@ -7,12 +7,14 @@ use App\Form\Enums\MessageTypeEnum;
 use App\Form\MessageType;
 use App\Services\EntityMaker;
 use Doctrine\Common\Collections\ArrayCollection;
+
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Annotation\Route;
@@ -74,35 +76,30 @@ class TestController extends AbstractController
     }
 
     /**
-     * @Route("/repertoire", name="test")
+     * @Route("/test/prediction", name="test")
      */
-/*
-    public function repertoire(){
-        $list_dir = array();
-        $result ="";
-        
-       if($handle = opendir('../templates')){
 
-           while(false !== ($entry = readdir($handle))){
-               if ($entry != "." and $entry != ".." and $entry != "base.html.twig" and $entry != "security"){
-                   array_push($list_dir, $entry);
-               }
-           }
-       }
+    public function prediction(Request $request)
+    {
 
+        $form = $this->createFormBuilder()
+            ->add('colonne1',NumberType::class, [])
+            ->add('colonne2', DateType::class, [])
+            ->getForm();
 
-         //dump($list_dir);
-         //exit;
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()){
+            dump($form->getData());exit;
+        }
 
+         //dump($list_dir);exit;
         return $this->render('test/index.html.twig', [
             'controller_name' => 'TestController',
-            'output' => $result,
-            'dirs' => $list_dir,
-            'eleves' => "",
-            'datasets' => "",
-
+            'form' => $form->createView(),
         ]);
-    }*/
+
+
+    }
 
 
 

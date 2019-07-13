@@ -205,4 +205,48 @@ class CRUDMaker{
             return "Message : ".$e->getMessage();
         }
     }
+
+
+
+    //---------------------------------------
+    //---------------------------------------
+
+    public function buildPredictionTemplates(){
+        $capitalizeEntityName = ucfirst($this->entityName);
+        $lowercaseEntityName = strtolower($this->entityName);
+
+
+        $generatedPredictionIndex= '{% extends \'base.html.twig\' %}
+
+                                        {% block title %}Prediction Form '.$capitalizeEntityName.'!{% endblock %}
+                                        
+                                        {% block body %}
+                                        <style>
+                                            .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+                                            .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+                                        </style>
+                                        
+                                        <div class="example-wrapper">
+                                            {{ form_start(form) }}
+                                            {{ form_widget(form) }}
+                                            <br/>
+                                            <button class=\'btn \' style="background:#3498db;">Faire une prédiction</button>
+                                            {{ form_end(form) }}
+                                        </div>
+                                        {% endblock %}';
+
+        try{
+            if($this->fs->exists($this->projectPath.'templates/__prediction/'.$lowercaseEntityName)){// Verifie si le repertoire existe
+
+            }else{// Sinon on retourne une erreur
+                $this->fs->mkdir($this->projectPath.'templates/__prediction/'.$lowercaseEntityName);
+                $generationResult['CRUDFolderExist'] = True;
+                $this->fs->appendToFile($this->projectPath.'templates/__prediction/'.$lowercaseEntityName.'/prediction.html.twig', $generatedPredictionIndex);
+                $generationResult['CRUDFilesIsGenerated'] = True;
+            }
+
+        }catch (\Exception $e){
+            return "Message : ".$e->getMessage();
+        }
+    }
 }
