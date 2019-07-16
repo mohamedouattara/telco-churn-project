@@ -19,7 +19,7 @@ class DocumentType extends AbstractType
                 'required' => false,
                 'multiple' => true,
             ])
-            ->add('submit', SubmitType::class,[])
+            //->add('submit', SubmitType::class,[])
         ;
     }
 

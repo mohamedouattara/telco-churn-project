@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+                            {% block title %}Edit Classe{% endblock %}
+                            
+                            {% block body %}
+                             <div class="white-block" style="padding:15px;">
+                                <h1>Edit Classe</h1>
+                            
+                                {{ include('classe/_form.html.twig', {'button_label': 'Update'}) }}
+                                <div class="button-container">
+                                    <div class="child-button-container">
+                                        <a href="{{ path('dataset_index') }}" class="btn" style="margin-left: 10px;">back</a>
+                                        {{ include('classe/_delete.html.twig') }}
+                                     </div>
+                                </div>
+                            </div>
+                            {% endblock %}
+                        

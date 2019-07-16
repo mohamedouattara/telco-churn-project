@@ -44,6 +44,8 @@ class PredictionController extends AbstractController
             $document->setName($filename);*/
             //$files = $request->files->get('post')['name'];
 
+           // dump($form->getData());exit;
+
             $files = $document->getName();
 
             $uploads_directory = $this->getParameter('upload_directory');

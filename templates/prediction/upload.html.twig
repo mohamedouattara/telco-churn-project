@@ -3,17 +3,49 @@
 {% block title %}Prediction upload!{% endblock %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css" />
+    {#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.css" />#}
+
+
+
 {% endblock %}
 
 {% block body %}
+
+    <style>
+.btn{
+    background:#3498db;
+}
+.btn:hover{
+    background:#b2bec3;
+}
+
+input.valid:not([type]), input.valid:not([type]):focus, input.valid[type="text"]:not(.browser-default), input.valid[type="text"]:not(.browser-default):focus, input.valid[type="password"]:not(.browser-default), input.valid[type="password"]:not(.browser-default):focus, input.valid[type="email"]:not(.browser-default), input.valid[type="email"]:not(.browser-default):focus, input.valid[type="url"]:not(.browser-default), input.valid[type="url"]:not(.browser-default):focus, input.valid[type="time"]:not(.browser-default), input.valid[type="time"]:not(.browser-default):focus, input.valid[type="date"]:not(.browser-default), input.valid[type="date"]:not(.browser-default):focus, input.valid[type="datetime"]:not(.browser-default), input.valid[type="datetime"]:not(.browser-default):focus, input.valid[type="datetime-local"]:not(.browser-default), input.valid[type="datetime-local"]:not(.browser-default):focus, input.valid[type="tel"]:not(.browser-default), input.valid[type="tel"]:not(.browser-default):focus, input.valid[type="number"]:not(.browser-default), input.valid[type="number"]:not(.browser-default):focus, input.valid[type="search"]:not(.browser-default), input.valid[type="search"]:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid > input.select-dropdown{
+    border-bottom: 1px solid #3498db;
+    -webkit-box-shadow: 0 1px 0 0 #3498db;
+    box-shadow: 0 1px 0 0 #3498db;
+}
+    </style>
     <div class="container">
         <h1>Upload</h1>
 
         {{ form_start(form) }}
+
+
+        {# MATERIALIZE MODEL
         {{ form_widget(form) }}
+        #}
+       <div class="file-field input-field">
+            <div class="btn">
+                <span>File</span>
+                <input type="file" name="document[name][]" multiple>
+            </div>
+            <div class="file-path-wrapper" >
+                <input class="file-path validate" type="text" placeholder="Upload one or more files">
+            </div>
+        </div>
 
 
+        <button class="btn">Soumettre</button>
 
         {{ form_end(form) }}
     </div>
@@ -21,24 +53,23 @@
 
 
 {% block javascripts %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>
+    {{ parent() }}
+
+   {# <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/dropzone.js"></script>#}
 
     <script>
         $(function(){
-            // jQuery
-            // Dropzone class:
-            //$('form').attr('class', 'dz-clickable dropzone');
-           // $('#document_name').parent().hide();
+           //$('input#document_name').nicefileinput();
 
+
+            $('#document_name').parent().hide();
             $('#document_submit').attr('class','btn').css({
                 "position":'relative',
                 "top":"155px",
                 "right":"22px",
-
             });
-            Dropzone.autoDiscover = false
-            //var myDropzone = new Dropzone("form", { url: "/file/post"});
 
         });
     </script>
 {% endblock %}
+

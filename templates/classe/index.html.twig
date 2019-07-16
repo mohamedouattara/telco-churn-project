@@ -1,0 +1,32 @@
+
+                            {#{% block title %}Classe index{% endblock %}#}
+                            
+                            {% block body %}
+                                <h3 style="margin-bottom: 0px;">Classe </h3>
+                            
+                                <table class="table striped">
+                                    <thead>
+                                        <tr>
+                                        <th>Annee</th><th>Effectif</th><th>Professeurprincipal</th>
+                                        <!--<th>Actions</th>-->
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for classe in classes %}
+                                        <tr>
+                                        <td><a href="{{ path('classe_show', {'id': classe.id}) }}">{{classe.annee|date('d-m-Y')}}</a></td><td><a href="{{ path('classe_show', {'id': classe.id}) }}">{{classe.effectif}}</a></td><td><a href="{{ path('classe_show', {'id': classe.id}) }}">{{classe.professeurprincipal}}</a></td>
+                                          {#  <td style="display:flex;flex-direction: column;">
+                                                <a href="{{ path('classe_show', {'id': classe.id}) }}"><i style="font-size:x-small;" class="material-icons tooltipped" data-position="left" data-tooltip="Show">remove_red_eye</i></a>
+                                               <a href="{{ path('classe_edit', {'id': classe.id}) }}"><i style="font-size:x-small;"  class="material-icons tooltipped" data-position="left" data-tooltip="Edit">build</i></a>
+                                            </td>#}
+                                        </tr>
+                                    {% else %}
+                                        <tr>
+                                            <td colspan="5">no records found</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            
+                                <a href="{{ path('classe_new') }}" class="btn" style="margin-top:15px;background:#3498db;">Create new <i class="material-icons">add</i></a>
+                            {% endblock %}

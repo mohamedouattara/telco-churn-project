@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+                            {% block title %}New Classe{% endblock %}
+                            
+                            {% block body %}
+                             <div class="white-block" style="padding:15px;">
+                                <h1>Create new Classe</h1>
+                            
+                                {{ include('classe/_form.html.twig') }}
+                            
+                                <a href="{{ path('dataset_index') }}" style="position: relative;left: 75px;bottom: 36px;" class="btn">back</a>
+                            </div>
+                            {% endblock %}

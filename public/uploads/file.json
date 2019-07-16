@@ -1,0 +1,9 @@
+{
+  "project": "eleve",
+  "feat_0": {"nom": "Nom", "type": "string"},
+  "feat_1": {"nom": "prenom", "type": "string"},
+  "feat_2": {"nom": "date_naissance", "type": "date"},
+  "feat_3": {"nom": "age", "type": "numeric"},
+  "feat_4": {"nom": "sexe", "type": "categorical", "unique_values":["Masculin","masculin","Feminin"]},
+  "feat_5": {"nom": "quartier", "type": "categorical", "unique_values":["Cocody","Koumassi","Marcory","Treichville","Plateau"]}
+}
