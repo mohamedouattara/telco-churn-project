@@ -13,6 +13,8 @@
     use Symfony\Component\HttpFoundation\Request;
     use Symfony\Component\HttpFoundation\Response;
     use Symfony\Component\Routing\Annotation\Route;
+    use Unirest;
+
     
     /**
      * @Route("/eleve")
@@ -47,7 +49,23 @@
             $form->handleRequest($request);
             
             if ($form->isSubmitted() && $form->isValid()){
-                dump($form->getData());exit;
+               // $client = new \GuzzleHttp\Client(['base_uri' => 'http://192.168.1.23:5000']);
+                //$response = $client->request('GET', 'prediction/mesparamtest');
+
+                // search Songs of Frank Sinatra
+                $headers = array('Accept' => 'application/json');
+                $query = array(
+                    'var' => json_encode($form->getData())
+                );
+
+                $response = Unirest\Request::post('http://192.168.1.115:5000/prediction/', $headers, $query);
+
+                if ($response->code == 200){
+                    //$data = json_decode($response->body->response, true);
+                    dump($response);exit;
+                }else{
+                    dump($response);exit;
+                }
             }
     
             return $this->render('__prediction/eleve/prediction.html.twig', [
