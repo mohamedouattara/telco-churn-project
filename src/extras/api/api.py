@@ -2,12 +2,14 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, request
+import json
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+	test = 1
+	return 'Hello, World!'
 
 
 
@@ -16,5 +18,7 @@ def prediction():
 	response = dict()
 	if request.method == 'POST':
 		response['response'] = request.form['var']
-		return response
-	 
+		y = json.loads(request.form['var'])
+		#print(y['prenom'])
+		return y
+

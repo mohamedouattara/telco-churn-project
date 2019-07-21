@@ -18,9 +18,29 @@ use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
 
 class TestController extends AbstractController
 {
+
+    /**
+     * @Route("/test/shell", name="shell")
+     */
+
+    public function shell()
+    {
+        $process = new Process(['/bin/sh', '/home/mohamed/telco-churn-project/public/test.sh']);
+        $process->run();
+
+        // executes after the command finishes
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        dump($process->getOutput());
+        exit;
+    }
     /**
      * @Route("/test", name="test")
      */

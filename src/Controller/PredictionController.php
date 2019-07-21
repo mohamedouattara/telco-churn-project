@@ -56,7 +56,7 @@ class PredictionController extends AbstractController
                 $ext = explode('.', $filename)[1];
 
                 // Il s'agit d'un fichier JSON définisant les paramètres de notre formulaire
-                if ( $file->guessExtension() == "txt" and $ext == 'json'){
+                if ( $file->guessExtension() == "txt" and $ext == 'json' and $filename == 'file.json'){
                     $contents = json_decode(file_get_contents($file->getPathname()), true);
 
                     $name = array_shift($contents);
@@ -69,6 +69,8 @@ class PredictionController extends AbstractController
                      $controllerMaker->buildPredictionController();
                     $crudMaker->buildPredictionTemplates();
                 }
+
+
 
                 //$filename = md5(uniqid()).'.'.$file->guessExtension();
 

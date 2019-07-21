@@ -58,7 +58,7 @@
                     'var' => json_encode($form->getData())
                 );
 
-                $response = Unirest\Request::post('http://192.168.1.115:5000/prediction/', $headers, $query);
+                $response = Unirest\Request::post('http://192.168.1.11:5000/prediction/', $headers, $query);
 
                 if ($response->code == 200){
                     //$data = json_decode($response->body->response, true);
