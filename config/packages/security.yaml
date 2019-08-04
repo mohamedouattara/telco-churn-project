@@ -32,9 +32,11 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/admin, roles: ROLE_ADMIN }
+        #- { path: ^/admin, roles: ROLE_SUPER_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        - { path: ^/user/new$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/user/, roles: ROLE_SUPER_ADMIN }
         #- { path: ^/dataset, roles: ROLE_USER }
         #- { path: ^/generator, roles: ROLE_USER }
         #- { path: ^/sanitizer, roles: ROLE_USER }

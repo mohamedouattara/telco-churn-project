@@ -3,17 +3,43 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<div class="white-block" style="padding:7%;background: white;overflow: hidden;box-shadow: 0 0 2px gainsboro;border-radius: 5px;">
+
+    <style>
+
+        .btn:hover, .btn-large:hover, .btn-small:hover {
+            background-color: #3498db;
+        }
+
+        .custom-container {
+            #background: white;
+            padding:0px;
+            margin:0px;
+            margin-top:9px;
+
+        }
+
+        input:not([type]):focus:not([readonly]) + label, input[type="text"]:not(.browser-default):focus:not([readonly]) + label, input[type="password"]:not(.browser-default):focus:not([readonly]) + label, input[type="email"]:not(.browser-default):focus:not([readonly]) + label, input[type="url"]:not(.browser-default):focus:not([readonly]) + label, input[type="time"]:not(.browser-default):focus:not([readonly]) + label, input[type="date"]:not(.browser-default):focus:not([readonly]) + label, input[type="datetime"]:not(.browser-default):focus:not([readonly]) + label, input[type="datetime-local"]:not(.browser-default):focus:not([readonly]) + label, input[type="tel"]:not(.browser-default):focus:not([readonly]) + label, input[type="number"]:not(.browser-default):focus:not([readonly]) + label, input[type="search"]:not(.browser-default):focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
+            color: #3498db;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            border-bottom: 0px solid #a4b0be;
+            margin-top: auto;
+
+        }
+
+
+
+    </style>
+<div class="white-block" style="padding:5%;background: white;overflow: hidden;box-shadow: 0 0 2px gainsboro;border-radius: 5px;">
     <div class="row">
         <div class="col s4"></div>
         <div class="col s4">
-<form method="post">
-    {% if error %}
-        <blockquote>
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        </blockquote>
 
-    {% endif %}
+            {#
+<form method="post">
+
 
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label for="inputEmail" class="sr-only">Email</label>
@@ -21,9 +47,10 @@
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
 
+
     <input type="hidden" name="_csrf_token"value="{{ csrf_token('authenticate') }}">
 
-    {#
+
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
         See https://symfony.com/doc/current/security/remember_me.html
 
@@ -32,12 +59,53 @@
                 <input type="checkbox" name="_remember_me"> Remember me
             </label>
         </div>
-#}
 
-    <button class="btn btn-lg btn-primary" type="submit">
+
+    <button class="btn btn-lg" type="submit">
         Sign in
     </button>
+    <a href="{{ path('user_new') }}" class="btn btn-lg" style="float: right;" >
+        Inscription
+    </a>
 </form>
+#}
+
+            <div class="row">
+                <form class="col s12" method="post">
+                    {% if error %}
+                        <blockquote>
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        </blockquote>
+
+                    {% endif %}
+                    <div class="row">
+                        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                        <div class="input-field col s12">
+                            <input id="email" type="email"  name="email">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password" type="password"  name="password">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="hidden" name="_csrf_token"value="{{ csrf_token('authenticate') }}">
+                        </div>
+                    </div>
+
+                    <button class="btn btn-lg" type="submit">
+                        Sign in
+                    </button>
+                    <a href="{{ path('user_new') }}" class="btn btn-lg" style="float: right;" >
+                        Inscription
+                    </a>
+
+                </form>
+            </div>
 
         </div>
         <div class="col s4"></div>

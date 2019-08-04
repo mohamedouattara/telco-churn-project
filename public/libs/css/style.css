@@ -7,6 +7,8 @@ body, html{
     width:100%;
     min-height: 100%;
 }
+
+
 h1,h2,h3,h4,h5,h6{
     font-family: 'Montserrat', sans-serif;
     border-bottom: 1px solid #a4b0be;
@@ -138,7 +140,7 @@ ul.champs li.generator-sub-content{
 
 .white-block{
     background: white;
-    margin:2%;
+    margin:1%;
     overflow: hidden;
     box-shadow:0 0 2px gainsboro;
     border-radius:5px;
@@ -238,4 +240,45 @@ ul.champs li.generator-sub-content{
 
 .btn{
     background: #a4b0be;
+}
+
+.datepicker-table td.is-today{
+    color: #3498db;
+}
+
+td.is-today.is-selected{
+    color:white;
+}
+
+table.datepicker-table thead tr th abbr{
+    color:white;
+}
+
+.datepicker-day-button:focus {
+    background-color: rgba(53, 87, 161, 0.25);
+}
+
+.btn:hover, .btn-large:hover, .btn-small:hover {
+    background-color: #0bf;
+}
+
+.white-block select:focus, .white-block input:focus {
+    border-bottom: 2px #0bf solid;
+}
+
+.white-block select, .white-block input {
+    border: none;
+    border-bottom-color: currentcolor;
+    border-bottom-style: none;
+    border-bottom-width: medium;
+    background: transparent;
+    outline: none;
+    border-bottom: 1px gainsboro solid;
+    padding: 5px 20px;
+    display: block;
+    width: 100%;
+}
+
+.dropdown-trigger:hover {
+    height: 64px;
 }

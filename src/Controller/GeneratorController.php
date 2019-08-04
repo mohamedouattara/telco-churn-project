@@ -26,7 +26,7 @@ class GeneratorController extends AbstractController
      */
     public function tableRemove($table, KernelInterface $kernel)
     {
-        $entityMaker = new EntityMaker($table,[],new Filesystem(), $kernel);
+        $entityMaker = new EntityMaker($table,[],new Filesystem(), $kernel, $this->getParameter('project_path'));
         $entityMaker->removeEntity($table);
 
         return $this->redirectToRoute('dataset_index');
@@ -90,7 +90,7 @@ class GeneratorController extends AbstractController
 
             }
 
-            $entityMaker = new EntityMaker($tableViewData, $fields, new Filesystem(), $kernel);
+            $entityMaker = new EntityMaker($tableViewData, $fields, new Filesystem(), $kernel, $this->getParameter('project_path'));
             $entityMaker->buildEntity();
 
 

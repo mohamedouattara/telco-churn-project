@@ -15,6 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 use Symfony\Component\PropertyInfo\PropertyInfoExtractor;
@@ -23,7 +24,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 // Include PhpSpreadsheet required namespaces
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
-use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+//use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\Writer\Csv;
 
 
 
@@ -73,7 +75,7 @@ class DatasetController extends AbstractController
 
 
             // usually you'll want to make sure the user is authenticated first
-            $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+            //$this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
 
             $spreadsheet = new Spreadsheet();
 
@@ -102,17 +104,35 @@ class DatasetController extends AbstractController
         $sheet->setTitle($table." DATASET");
 
         // Create your Office 2007 Excel (XLSX Format)
-        $writer = new Xlsx($spreadsheet);
-
+        //$writer = new Xlsx($spreadsheet);
+        $writer = new Csv($spreadsheet);
         // Create a Temporary file in the system
-        $fileName = $table.'_dataset.xlsx';
+        $csvFileName = $table.'_dataset.csv';
+        //$csv_temp_file = tempnam(sys_get_temp_dir(), $csvFileName);
 
+        $response =  new StreamedResponse(
+            function () use ($writer) {
+
+                $writer->setDelimiter(",");
+                $writer->setEnclosure('');
+                $writer->setLineEnding("\r\n");
+                $writer->setSheetIndex(0);
+                $writer->setUseBOM(true);
+                $writer->save('php://output');
+            }
+        );
+        $response->headers->set('Content-Type', 'text/csv');
+        $response->headers->set('Content-Disposition', 'attachment;filename="'.$csvFileName.'"');
+        $response->headers->set('Cache-Control','max-age=0');
+        return $response;
+
+        /*// Create a Temporary file in the system
+        $fileName = $table.'_dataset.xlsx';
         $temp_file = tempnam(sys_get_temp_dir(), $fileName);
         // Create the excel file in the tmp directory of the system
-
         $writer->save($temp_file);
         // Return the excel file as an attachment
-        return $this->file($temp_file, $fileName, ResponseHeaderBag::DISPOSITION_INLINE);
+        return $this->file($temp_file, $fileName, ResponseHeaderBag::DISPOSITION_INLINE);*/
 
     }
 
@@ -125,6 +145,7 @@ class DatasetController extends AbstractController
         // use inline documentation to tell your editor your exact User class
         // /** @var \App\Entity\User $user */
         // $user = $this->getUser();
+
 
         $list_dir = array();
         $entityMaker = new EntityMaker(null, [], new Filesystem(), $kernel);
@@ -142,6 +163,7 @@ class DatasetController extends AbstractController
                     $entry != "test" and
                     $entry != "prediction" and
                     $entry != "__prediction" and
+                    $entry != "user" and
                     $entry != 'generator'
                 ){
                     array_push($list_dir, $entry);

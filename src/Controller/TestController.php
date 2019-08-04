@@ -8,6 +8,7 @@ use App\Form\MessageType;
 use App\Services\EntityMaker;
 use Doctrine\Common\Collections\ArrayCollection;
 
+use Osms\Osms;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -30,6 +31,7 @@ class TestController extends AbstractController
 
     public function shell()
     {
+
         $process = new Process(['/bin/sh', '/home/mohamed/telco-churn-project/public/test.sh']);
         $process->run();
 
@@ -38,7 +40,9 @@ class TestController extends AbstractController
             throw new ProcessFailedException($process);
         }
 
-        dump($process->getOutput());
+
+        $response = strlen($process->getOutput()) > 1 ? "Le container avec l'ID ".$process->getOutput()." a été créé avec succès.": "Une erreur s'est produite." ;
+        dump($response);
         exit;
     }
     /**
@@ -121,6 +125,40 @@ class TestController extends AbstractController
 
     }
 
+    /**
+     * @Route("/test/osms", name="osms")
+     */
+
+    public function sendosmsapi()
+    {
+        dump($this->getParameter('project_path'));
+        exit;
+        $credential = array(
+        'clientId' => 'LpP9LhhfTABheIGkwXdkBmBYGIQIGR6w',
+        'clientSecret' => 'QjNcZkggHUiwr3Z2'
+    );
+
+        $osms = new Osms($credential);
+
+
+        $token = $osms->getTokenFromConsumerKey();
+
+
+        $result = $osms->sendSMS('tel:+243824109491',
+            'tel:+243824109491',
+            'Bonjour Goms',
+            'Informagenie'
+        );
+        dump($result);
+        exit;
+
+        //dump($list_dir);exit;
+        return $this->render('test/index.html.twig', [
+            'controller_name' => 'TestController',
+            'form' => $form->createView(),
+        ]);
+
+    }
 
 
 

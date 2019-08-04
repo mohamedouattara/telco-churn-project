@@ -9,6 +9,8 @@ use App\Services\CRUDMaker;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
 use Symfony\Component\Routing\Annotation\Route;
 
 class PredictionController extends AbstractController
@@ -80,6 +82,19 @@ class PredictionController extends AbstractController
                 );
 
             }
+
+            //Lancement du container docker
+            $process = new Process(['/bin/sh', '/home/mohamed/telco-churn-project/public/test.sh']);
+            $process->run();
+
+            // executes after the command finishes
+            if (!$process->isSuccessful()) {
+                //throw new \Exception("Le containeur que vous tentez de créer existe déja!.");
+                throw new ProcessFailedException($process);
+            }
+
+            //dump($process->getOutput());
+
 
             return $this->redirectToRoute($redirection_path);
         }

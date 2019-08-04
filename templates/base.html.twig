@@ -27,7 +27,7 @@
     </head>
 
     <body>
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+
         {% block navbar %}
             <!--NAVBAR-->
             <!-- Dropdown Structure -->
@@ -37,37 +37,43 @@
                 <li class="divider"></li>
                 <li><a href="#!">three</a></li>
             </ul>#}
-
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
             <ul id="dropdown1" class="dropdown-content">
                 {# <li><a href="#!">one</a></li>#}
-                <li><a href="#!">Profile</a></li>
+                <li><a href="{{ path('user_show', {'id': app.user.id}) }}">Profile</a></li>
                 <li class="divider"></li>
                 <li class="red"><a href="{{ path('app_logout') }}" class="white-text"><i class="material-icons">exit_to_app</i> Logout</a></li>
             </ul>
-
+            {% endif %}
 
 
             <nav>
                 <div class="nav-wrapper" style="background:#3498db;">
                     <a href="{{ path('dataset_index') }}" class="brand-logo">
-                        <span style="border-bottom: 0px; font-size: 2.5rem; font-weight: bold;">&nbsp;&nbsp;KERNEL IA</span>
+                        <span style="border-bottom: 0px; font-size: 2.5rem; font-weight: bold;">&nbsp;&nbsp;KERNEL IA     </span>
                     </a>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
                     <ul class="right hide-on-med-and-down">
                         <li {% if controller is defined and controller == 'dataset_index'%}class="active" {% endif %} ><a href="{{ path('dataset_index') }}">All tables</a></li>
                         <li {% if controller is defined and controller == 'prediction_upload'%}class="active" {% endif %}><a href="{{ path('prediction_upload') }}">Predictions</a></li>
 
                         {#<li {% if controller is defined and controller == 'generator'%}class="active" {% endif %} ><a href="{{ path('generator') }}">Generator</a></li>
-                        #}<li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><img style="margin: 6px;" src="https://placehold.it/50X50" class="responsive-img circle" alt=""></a></li>
+                        #}
+{#                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><img style="margin: 6px;" src="https://placehold.it/50X50" class="responsive-img circle" alt=""></a></li>#}
+                        <li><a class="dropdown-trigger" href="#!" data-target="dropdown1"><img style="margin: 2px;width:60px;height:60px;" src="{{ vich_uploader_asset(app.user, 'imageFile') }}" class="responsive-img circle" alt=""></a></li>
                         <!-- Dropdown Trigger -->
-                        {#<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>#} </ul>
+                        {#<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>#}
+                    </ul>
+                    {% endif %}
                 </div>
             </nav>
+
         {% endblock %}
     <!--END NAVBAR-->
 
     <!--MaterializeCSS Floating Button-->
 
-
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
     <div class="fixed-action-btn">
         <button class="btn-floating btn-large" style="background:#3498db;">
             <i class="large material-icons" style="font-size: 2rem">add</i>
@@ -80,13 +86,20 @@
             <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>#}
         </ul>
     </div>
-    {% endif %}
+        {% endif %}
+
 
     <!--MaterializeCSS Floating Button end-->
 
 
     <div class="container-fluid">
+        {% for message in app.flashes('success') %}
+            <div style="width:100%; padding:15px 35px; background: #04c3c3; color:white; font-weight: bold; font-size: large;">
+                {{ message }}
+            </div>
+        {% endfor %}
         <div class="custom-container" style="position:relative;">
+
             {% block body %}{% endblock %}
         </div>
     </div>

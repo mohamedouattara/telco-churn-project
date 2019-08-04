@@ -1,7 +1,13 @@
-result=$( sudo docker images )
+#!/bin/sh
 
-if [[ -n "$result" ]]; then
-  echo "Container exists"
-else
-  echo "No such container"
-fi
+#sh ./dockercommand/build.sh
+result=$(sh ./dockercommand/run.sh)
+echo $result
+#sh ./dockercommand/exec.sh
+
+#result=$( docker images )
+#if [[ -z "$result" ]]; then
+#  echo "Container exists"
+#else
+#  echo $result
+#fi
