@@ -8,6 +8,8 @@
 /public/bundles/
 /var/
 /vendor/
+/src/config/
+/public/uploads/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

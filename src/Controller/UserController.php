@@ -46,7 +46,7 @@ class UserController extends AbstractController
 
             $this->addFlash('success', 'Un nouvelle utilisateur à été créé!');
 
-            return $this->redirectToRoute('user_index');
+            return $this->redirectToRoute('dataset_index');
         }
 
         return $this->render('user/new.html.twig', [
@@ -78,8 +78,8 @@ class UserController extends AbstractController
             $this->getDoctrine()->getManager()->flush();
             $user->setImageFile(null);
 
-            return $this->redirectToRoute('user_index', [
-                'id' => $user->getId(),
+            return $this->redirectToRoute('dataset_index', [
+                //'id' => $user->getId(),
             ]);
         }
 
@@ -101,6 +101,6 @@ class UserController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('user_index');
+        return $this->redirectToRoute('dataset_index');
     }
 }
