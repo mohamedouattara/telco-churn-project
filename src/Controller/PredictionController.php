@@ -33,7 +33,7 @@ class PredictionController extends AbstractController
     public function upload(Request $request, Filesystem $filesystem)
     {
         $document = new Document();
-        $projectPath = sys_get_temp_dir().'/../home/mohamed/telco-churn-project/';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        $projectPath = sys_get_temp_dir().'/../home/mohamed/telco-churn-project/';
         $redirection_path = 'prediction_upload';
         $form = $this->createForm(DocumentType::class, $document);
         $name = '';
@@ -83,7 +83,7 @@ class PredictionController extends AbstractController
 
             }
 
-            //Lancement du container docker
+                                    /* //Lancement du container docker
             $process = new Process(['/bin/sh', '/home/mohamed/telco-churn-project/public/test.sh']);
             $process->run();
 
@@ -93,6 +93,7 @@ class PredictionController extends AbstractController
                 throw new ProcessFailedException($process);
             }
 
+            */
             //dump($process->getOutput());
 
 
