@@ -229,7 +229,7 @@ class ControllerMaker{
     /**
      * @Route("/'.$lowercaseEntityName.'")
      */
-    class '.$capitalizeEntityName.'Controller extends AbstractController
+    class __Prediction'.$capitalizeEntityName.'Controller extends AbstractController
     {
        
         /**
@@ -261,11 +261,11 @@ class ControllerMaker{
 
         try{
             if($this->fs->exists($this->projectPath.'src/Controller')){// Verifie si le repertoire existe
-                if ($this->fs->exists($this->projectPath.'src/Controller/'.$capitalizeEntityName.'Controller.php')){
+                if ($this->fs->exists($this->projectPath.'src/Controller/__Prediction'.$capitalizeEntityName.'Controller.php')){
                     $generationResult['ControllerFileIsGenerated'] = True;
                     //return [False, "Le fichier Controller $this->entityName existe déja"];
                 }else{
-                    $this->fs->appendToFile($this->projectPath.'src/Controller/'.$capitalizeEntityName.'Controller.php', $generatedController);
+                    $this->fs->appendToFile($this->projectPath.'src/Controller/__Prediction'.$capitalizeEntityName.'Controller.php', $generatedController);
 
                     $generationResult['ControllerFileIsGenerated'] = True;
 

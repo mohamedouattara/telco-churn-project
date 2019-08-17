@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\test;
 
 use App\Entity\Message;
 use App\Form\Enums\MessageTypeEnum;
